@@ -2,6 +2,8 @@
 
 ## Devhunter ![Coverage](https://img.shields.io/teamcity/coverage/bt1242.svg)
 
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/devhunterco)
+
 
 Esta app esta construida con Python utilizando Django como framework.
 
@@ -9,19 +11,25 @@ La idea es que podamos tener nuestra propia red, planear, comunicar, organizar y
 
 Inicialmente se trabajara en un modulo que ponga a disposición todas las funcionalidades de un foro, cualquiera podra registrase y participar.
 
-<del>Si! , remplazaremos a Facebook</del>
-
-
 
 ## Configuración 
 
-Incluir el archivo `local_settigs.py` en el directorio devhunter [Descargar aquí](https://gist.github.com/uzi200/5a6fa6eebb997a709040)
+
+- Incluir el archivo `local_settigs.py` en el directorio devhunt [Descargar aquí](https://gist.github.com/uzi200/5a6fa6eebb997a709040)
+-  Instalar virtualenv `sudo pip install virtualenv`
+-  En el repo hacer `virtualenv env && source env/bin/activate`
+-  Instalar todas las dependencias `pip install -r requirements.txt`
+-  Migrar la base de datos `./manage.py migrate`
+-  Sincronizar los modelos `./manage.py syncdb`
+-  Crear las tablas para los indices del cache `./manage.py createcachetable foro_cache`
+-  Correr el servidor `./manage.py runserver`
+-  Happy coding :D 
 
 
 ### Relase v0.2
 
 - [ ] Integración Auth con github
-- [ ] Modulo: chat real-time con Nodejs
+- [x] Modulo: chat real-time con Nodejs
 
 ### Relase v0.1
 
@@ -48,4 +56,3 @@ Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and limitations under the License.
-

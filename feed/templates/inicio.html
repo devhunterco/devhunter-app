@@ -1,0 +1,68 @@
+{% extends "foro/_base.html" %}
+{% block title %} Comunidad {% endblock %}
+{% load foro_tags i18n %}
+
+{% block content %}
+<div class="container ">
+{% include "jumbotron.html" %}
+
+        <div class="row">
+            <!-- General info -->
+            <div class="col-md-3">
+               <div class="list-group">
+                    <a href="https://trello.com/b/vbgSpQZs/tareas-devhunter" target="_blank" class="list-group-item">
+                    <i class="fa fa-trello"></i> Tareas y agenda
+                    </a>
+                    <a href="https://github.com/devhunterco" target="_blank" class="list-group-item"><i class="fa fa-github"></i> Repositorios </li>
+                    </a>
+                    <a href="https://gitter.im/devhunterco/General" target="_blank" class="list-group-item"><i class="fa fa-comments-o"></i> Chat </li>
+                    </a>
+                </div>
+                {% for miembro in miembros_email %}
+                <a href="discusion/user/{{miembro.id}}"><img class="avatar-list" src="{% get_gravatar_url miembro 60 %}" alt=""></a>
+                {% empty %}
+                <p>No hay miembros</p>
+                {% endfor %}
+
+                <ul class="numbers list-group">
+                    <li class="list-group-item">
+                        <span class="badge">{{miembros_count}}</span>
+                         Miembros
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">1</span>
+                        Reuniones pasadas
+                    </li>
+                </ul>
+            </div>
+
+<!-- Eventos -->
+  <div class="col-md-6">
+      <h2><strong>Reuniones y eventos</strong></h2>
+        <hr>
+        {% for event in events%}
+        <div class="event">
+          <h2><a class="event-title" href="evento/{{event.id}}">{{event.title}}</a></h2>
+              <div class="meta">
+                  <a href=""><i class="fa fa-clock-o"></i> {{event.due_date}}</a>
+                  |
+                  <a href=""><i class="fa fa-file-code-o"></i> {{event.lugar}}</a>
+              </div>
+              <p>{{event.description_short}} </p>
+        </div>
+        {% endfor %}
+  </div>
+
+              {% include "recent_activity.html" %}
+
+                 </div>
+                 <hr>
+
+            {% include "sponsors.html" %}
+
+
+
+
+
+
+{% endblock %}
