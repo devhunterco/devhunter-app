@@ -100,7 +100,8 @@
     Notification.prototype.ajaxDone = function() {
       this.el.addClass("js-tab");
       $.tab();
-      return this.el.trigger('click');
+      $('#ModalNotification').modal('show');
+      //return this.el.trigger('click');
     };
 
     Notification.prototype.stopClick = function(e) {
