@@ -24,9 +24,9 @@
 
 </div>
 </div>
-<div class="container container-white ">
+<div style="padding:0; margin-bottom:200px" class="container  ">
   <div class="row"> <!-- Row #1 -->
-    <div class="col-md-3">
+    <div class="col-md-3 container-white ">
       <div class=" list-group">
         <a class="list-group-item" href=""> Miembros  <span class="badge">{{miembros_count}}</span>  </a>
         <a class="list-group-item" href=""> Proximas reuniones  <span class="badge">4</span>  </a>
@@ -39,13 +39,15 @@
       {% empty %}
         <p>No hay miembros</p>
       {% endfor %}
+      <br>
+      <br>
     </div>
-    <div class="col-md-6"> <!-- Eventos col #1 -->
+    <div class="col-md-8 container-white"> <!-- Eventos col #1 -->
       <h2><strong>Reuniones y eventos</strong></h2>
         <hr>
         {% for event in events%}
         <div class="event">
-          <h2><a class="event-title" href="evento/{{event.id}}">{{event.title}}</a></h2>
+          <h2><a class="event-title" href="event/{{event.id}}">{{event.title}}</a></h2>
               <div class="meta">
                   <a href=""><i class="fa fa-clock-o"></i> {{event.due_date}}</a>
                   |
@@ -56,10 +58,8 @@
         {% endfor %}
     </div>
   </div> <!-- End row #1 -->
-{% include "site/sponsors.html" %}
 </div>
 
-
-
+{% include "site/sponsors.html" %}
 
 {% endblock %}

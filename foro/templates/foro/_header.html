@@ -2,10 +2,10 @@
 
     <header class="header-gray header js-tabs-container">
 
-  <div class="container">
+  <div style="padding:0;" class="container">
 
     <a style="" class="header-logo" href="/">
-        <img style="width:200px;" src="{{STATIC_URL}}inicio/images/DevHunter-Logo-300-o.png" alt="">
+        <img style="width:170px;" src="{{STATIC_URL}}inicio/images/DevHunter-Logo-300-o.png" alt="">
     </a>
 
         {% if user.is_authenticated %}
@@ -68,7 +68,7 @@
 
 	</header>
     <div class="nav-fixed nav">
-        <div class="container">
+        <div style="padding:0" class="container">
         <li><a class="nav-link {% if request.get_full_path = "/" %} nav-link-active {% endif %}  " href="{% url "feed:site-landing" %}">Inicio</a></li>
         <li><a class="nav-link {% if request.get_full_path = "/discusion/" %} nav-link-active {% endif %} " href="{% url "foro:foro-index" %}">Discusion </a></li>
         <li><a class="nav-link {% if request.get_full_path = "/projects/" %} nav-link-active {% endif %}" href="{% url "feed:projects-active" %}">Proyectos</a></li>

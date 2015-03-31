@@ -523,6 +523,7 @@ h2 {
 
 .avatar-list{
   width:60px;
+  border-radius:5px;
 }
 
 
@@ -557,13 +558,14 @@ h2 {
 }
 
 .header-landing{
-  margin-bottom:20px;
-  margin-top:10px;
+  margin-bottom:10px;
+  margin-top:15px;
   background:url("http://localhost:8000/static/inicio/images/cover.jpg") center center no-repeat;
   background-size: cover;
   height:300px;
   width:100%;
   position:relative;
+  border-radius:5px;
 }
 .btn-primary {
   background-color: rgba(60, 173, 212, 0.7) !important;
@@ -580,7 +582,7 @@ h2 {
   background: rgba(0, 0, 0, .65);
   width:100%;
   text-align:center;
-
+  border-radius:5px;
 }
 
 .header-overlay h1 {
@@ -590,6 +592,7 @@ h2 {
 .container-white{
   background-color:white !important;
   border-radius:5px;
+  margin-right:10px;
 
 
 }
