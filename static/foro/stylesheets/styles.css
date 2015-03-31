@@ -558,17 +558,26 @@ h2 {
 
 .header-landing{
   margin-bottom:20px;
+  margin-top:10px;
   background:url("http://localhost:8000/static/inicio/images/cover.jpg") center center no-repeat;
   background-size: cover;
   height:300px;
   width:100%;
   position:relative;
 }
+.btn-primary {
+  background-color: rgba(60, 173, 212, 0.7) !important;
+}
+.btn-primary:hover {
+  color: #ffffff;
+  background-color: rgba(60, 173, 212, 1) !important;
+  border-color: rgba(0,0,0,0);
+}
 
 .header-overlay{
 
   position: absolute; bottom: 0; left: 0;
-  background: rgba(0, 0, 0, .75);
+  background: rgba(0, 0, 0, .65);
   width:100%;
   text-align:center;
 
