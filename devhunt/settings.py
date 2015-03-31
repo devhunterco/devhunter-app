@@ -6,7 +6,7 @@ import os
 
 # Extender configuraciones del la app para el foro
 from foro.settings import *
-
+from django.utils.translation import ugettext_lazy as _
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = False
@@ -39,6 +39,12 @@ INSTALLED_APPS += (
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+LANGUAGES = (
+    ('es', _('Spanish')),
+)
+
+LANGUAGE_CODE = 'es-co'
 
 """
 Configuraciones para trabajar en local y en produccion

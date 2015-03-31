@@ -1,0 +1,59 @@
+{% extends "foro/_base.html" %}
+{% block title %} Comunidad {% endblock %}
+{% load foro_tags i18n %}
+
+{% block content %}
+
+<style>
+  body{
+    background-color:#BDBDBD;
+  }
+</style>
+<div>
+<div class="header-landing container">
+
+  <div class="header-overlay">
+    <h1>{{config.site_landing_title}}</h1>
+  </div>
+
+</div>
+</div>
+<div class="container container-white ">
+  <div class="row"> <!-- Row #1 -->
+    <div class="col-md-3">
+      <div class=" list-group">
+        <a class="list-group-item" href=""> Miembros  <span class="badge">{{miembros_count}}</span>  </a>
+        <a class="list-group-item" href=""> Proximas reuniones  <span class="badge">4</span>  </a>
+        <a class="list-group-item" href=""> Calendario  <i style="float:right;" class="fa fa-calendar"></i> </a>
+
+
+      </div>
+      {% for miembro in miembros_email %}
+        <a href="discusion/user/{{miembro.id}}"><img class="avatar-list" src="{% get_gravatar_url miembro 60 %}" alt=""></a>
+      {% empty %}
+        <p>No hay miembros</p>
+      {% endfor %}
+    </div>
+    <div class="col-md-6"> <!-- Eventos col #1 -->
+      <h2><strong>Reuniones y eventos</strong></h2>
+        <hr>
+        {% for event in events%}
+        <div class="event">
+          <h2><a class="event-title" href="evento/{{event.id}}">{{event.title}}</a></h2>
+              <div class="meta">
+                  <a href=""><i class="fa fa-clock-o"></i> {{event.due_date}}</a>
+                  |
+                  <a href=""><i class="fa fa-file-code-o"></i> {{event.lugar}}</a>
+              </div>
+              <p>{{event.description_short}} </p>
+        </div>
+        {% endfor %}
+    </div>
+  </div> <!-- End row #1 -->
+{% include "site/sponsors.html" %}
+</div>
+
+
+
+
+{% endblock %}

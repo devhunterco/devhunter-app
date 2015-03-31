@@ -12,7 +12,8 @@ from foro.forms.admin import BasicConfigForm
 djconfig.register(BasicConfigForm)
 
 urlpatterns = patterns('',
-                       url(r'^$', 'foro.views.topic.topics_active', name='index'),
+                       url(r'^$', 'foro.views.topic.topics_active',
+                           name='foro-index'),
                        url(r'^st/admin/', include('foro.urls.admin')),
                        url(r'^category/', include('foro.urls.category')),
                        url(r'^topic/', include('foro.urls.topic')),

@@ -10,7 +10,7 @@ from foro.models.user import User
 
 
 @administrator_required
-def new_event(request):
+def event_publish(request):
     if request.method == 'POST':
         form = EventForm(request.POST, request.FILES)
 
@@ -18,13 +18,13 @@ def new_event(request):
             form.save()
     else:
         form = EventForm()
-    return render(request, 'new_event.html', {'form': form})
+    return render(request, 'event/event_publish.html', {'form': form})
 
 
 def event_detail(request, id_event):
     miembros_email = User.objects.filter(es_destacado=True)
     miembros_count = User.objects.all().count()
     event = get_object_or_404(Event, pk=id_event)
-    return render(request, 'event_detail.html',
+    return render(request, 'event/event_detail.html',
                   {'event': event, 'miembros_email': miembros_email,
                    'miembros_count': miembros_count})

@@ -69,8 +69,15 @@ class CommentFlagForm(forms.ModelForm):
 
 class BasicConfigForm(ConfigForm):
 
-    site_name = forms.CharField(initial="foro", label=_("site name"))
-    site_description = forms.CharField(initial="", label=_("site description"), max_length=75, required=False)
-    template_footer = forms.CharField(initial="", label=_("footer snippet"), required=False,
-                                      widget=forms.Textarea(attrs={'rows': 2, }),
-                                      help_text=_("This gets rendered just before the footer in your template."))
+    site_name = forms.CharField(initial="Tu comunidad",
+                                label=_("Nombre del sitio"))
+    site_description = forms.CharField(initial="Descripción de tu comunidad..",
+                                       label=_("Descripción"),
+                                       max_length=160, required=False)
+    site_landing_title = forms.CharField(initial="Bienvenido a la comunidad !",
+                                         label=_("Titulo del landing"),
+                                         max_length=60, required=False)
+    show_alert_menssage = forms.BooleanField(initial=True,
+                                             label=_("Mostrar alerta"))
+    alert_menssage = forms.CharField(initial="alert_menssage",
+                                     label="Mensaje de alerta", max_length=180)

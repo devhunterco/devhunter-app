@@ -547,17 +547,50 @@ h2 {
   color:#3CADD4;
 }
 
-.badge{
-  background-color:#ef5350;
-}
-
 .list-group-item{
-  border:0px;
-  border-bottom: 1px solid #DDD !important;
+  border-left:0;
+  border-right:0;
+  border-bottom: 1px dotted #EEE !important;
 }
 .numbers{
   margin-top:10px;
 }
+
+.header-landing{
+  margin-bottom:20px;
+  background:url("http://localhost:8000/static/inicio/images/cover.jpg") center center no-repeat;
+  background-size: cover;
+  height:300px;
+  width:100%;
+  position:relative;
+}
+
+.header-overlay{
+
+  position: absolute; bottom: 0; left: 0;
+  background: rgba(0, 0, 0, .75);
+  width:100%;
+  text-align:center;
+
+}
+
+.header-overlay h1 {
+  color:#EEE;
+}
+
+.container-white{
+  background-color:white !important;
+  border-radius:5px;
+
+
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1000px !important;
+  }
+}
+
 .comment-media, .container,
 .header, .row,
 .comment, .comment-info, .menu-item {

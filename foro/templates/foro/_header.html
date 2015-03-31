@@ -53,11 +53,11 @@
 
     <div class="nav-fixed nav">
         <div class="container">
-        <li><a class="nav-link {% if request.get_full_path = "/" %} nav-link-active {% endif %}  " href="/">Inicio</a></li>
-        <li><a class="nav-link {% if request.get_full_path = "/discusion/" %} nav-link-active {% endif %} " href="/discusion">Discusion </a></li>
-        <li><a class="nav-link {% if request.get_full_path = "/proyectos/" %} nav-link-active {% endif %}" href="/proyectos">Proyectos</a></li>
-        <li><a class="nav-link {% if request.get_full_path = "/docs/" %} nav-link-active {% endif %}" href="http://docs.devhunter.co">Docs</a></li>
-        <li><a class="nav-link {% if request.get_full_path = "/equipo/" %} nav-link-active {% endif %}" href="/equipo">Equipo</a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/" %} nav-link-active {% endif %}  " href="{% url "feed:site-landing" %}">Inicio</a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/discusion/" %} nav-link-active {% endif %} " href="{% url "foro:foro-index" %}">Discusion </a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/projects/" %} nav-link-active {% endif %}" href="{% url "feed:projects-active" %}">Proyectos</a></li>
+        <li><a class="nav-link" href="#">Eventos</a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/equipo/" %} nav-link-active {% endif %}" href="{% url "feed:site-about" %}">Equipo</a></li>
         </div>
     </div>
 

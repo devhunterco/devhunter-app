@@ -9,18 +9,20 @@ from foro.utils.decorators import administrator_required
 from feed.models import Project
 
 
-def proyectos(request):
+def projects_active(request):
     proyectos = Project.objects.all()
-    return render(request, 'projects/proyectos.html', {"proyectos": proyectos})
+    return render(request, 'project/projects_active.html',
+                           {'proyectos': proyectos})
 
 
-def ver_project(request, pk):
+def project_detail(request, pk):
     proyecto = get_object_or_404(Project, id=pk)
-    return render(request, 'projects/ver_project.html', {"proyecto": proyecto})
+    return render(request, 'project/project_detail.html',
+                           {'proyecto': proyecto})
 
 
 @administrator_required
-def new_project(request):
+def project_publish(request):
     if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES)
 
@@ -30,11 +32,11 @@ def new_project(request):
     else:
         form = ProjectForm()
 
-    return render(request, 'projects/new_project.html', {'form': form})
+    return render(request, 'project/project_publish.html', {'form': form})
 
 
 @administrator_required
-def edit_project(request, pk):
+def project_update(request, pk):
     proyecto = get_object_or_404(Project, pk=pk)
     if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES, instance=proyecto)
@@ -43,4 +45,4 @@ def edit_project(request, pk):
     else:
         form = ProjectForm(instance=proyecto)
 
-    return render(request, 'projects/edit_project.html', {'form': form})
+    return render(request, 'project/project_update.html', {'form': form})
