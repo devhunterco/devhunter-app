@@ -3,34 +3,41 @@
 {% load foro_tags i18n %}
 
 {% block content %}
-
 <style>
-  body{
-    background-color:#BDBDBD;
+
+  body {
+    background-color:#F5F5F5;
   }
+
 </style>
-<div>
-<div class="header-landing container">
 
-  <div class="header-overlay">
-    <h1>{{config.site_landing_title}}</h1>
-      {% if user.is_authenticated %}
-        <a class="btn-primary btn-lg" href="/discusion/"><i class="fa fa-pencil"></i>&nbsp;Participa! </a>
-        <br><br>
-      {% else %}
-        <p><a class="btn-primary btn-lg" href="/discusion/user/register/"> <i class="fa fa-users"></i>&nbsp;Únete!</a>&nbsp;o&nbsp;<a href="/equipo/"> Conoce más</a></p>
-      {% endif %}
+<div class="container">
+
+<div class="row">
+  <div class="col-md-11 header-landing panel panel-defaul">
+      <div class="header-overlay">
+        <h1 class="header-title">{{config.site_landing_title}}
+          {% if user.is_authenticated %}
+            <a class="btn-primary btn-lg call-to-action" href="/discusion/"><i class="fa fa-pencil"></i>&nbsp;Participa! </a>
+          {% else %}
+           <a class="btn-primary btn-lg call-to-action" href="/discusion/user/register/"> <i class="fa fa-users"></i>&nbsp;Únete!</a>
+          {% endif %}
+        </h1>
+      </div>
   </div>
+</div>
 
-</div>
-</div>
-<div style="padding:0; margin-bottom:200px" class="container  ">
-  <div class="row"> <!-- Row #1 -->
-    <div class="col-md-3 container-white ">
+  <div class="row"> <!-- Row #2 -->
+    <div  class="col-md-3 card panel panel-defaul ">
+      <img class="logo-org" src="{{STATIC_URL}}/inicio/images/logo.png" alt="">
+       <p style="text-align:center" ><i class="fa fa-map-marker"></i> Caribe, Colombia</p>
+       <br>
       <div class=" list-group">
-        <a class="list-group-item" href=""> Miembros  <span class="badge">{{miembros_count}}</span>  </a>
+
         <a class="list-group-item" href=""> Proximas reuniones  <span class="badge">4</span>  </a>
         <a class="list-group-item" href=""> Calendario  <i style="float:right;" class="fa fa-calendar"></i> </a>
+        <a class="list-group-item" href=""> Miembros  <span class="badge">{{miembros_count}}</span>  </a>
+        <hr>
 
 
       </div>
@@ -41,8 +48,35 @@
       {% endfor %}
       <br>
       <br>
+
+      <h2 ><a class="event-title" href="">Sponsors</a></h2>
+      <hr>
+      <div class="sponsor">
+        <div class="sponsor-logo">
+          <a href="http://brujulab.co"><img src="{{STATIC_URL}}inicio/images/brujulab.png"></a>
+        </div>
+        <a href="http://brujulab.co">Brujulab</a>
+        <p>Diseño y desarrollo web.</p>
+      </div>
+      <hr>
+      <div class="sponsor">
+        <div class="sponsor-logo">
+          <a href="http://caribemesh.org"><img src="{{STATIC_URL}}inicio/images/caribemesh_logo.png"></a>
+        </div>
+        <a href="http://caribemesh.org">Caribemesh</a>
+        <p>Fundacion CaribeMesh Red libre y comunitaria del caribe</p>
+      </div>
+      <hr>
+      <div class="sponsor">
+        <div class="sponsor-logo">
+        <a href="http://www.caribecoders.com"><img style="border-radius: 0.4em;" src="{{STATIC_URL}}inicio/images/caribecoders.png"></a>
+        </div>
+        <a href="http://www.caribecoders.com">Caribe coders</a>
+        <p>Seguridad, consultoria y desarrollo web.</p>
+      </div>
     </div>
-    <div class="col-md-8 container-white"> <!-- Eventos col #1 -->
+
+    <div class="col-md-8 panel panel-defaul left-feed"> <!-- Eventos col #1 -->
       <h2><strong>Reuniones y eventos</strong></h2>
         <hr>
         {% for event in events%}
@@ -57,9 +91,9 @@
         </div>
         {% endfor %}
     </div>
-  </div> <!-- End row #1 -->
+  </div> <!-- End row #2 -->
 </div>
-
+</div>
 {% include "site/sponsors.html" %}
 
 {% endblock %}
