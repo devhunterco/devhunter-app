@@ -524,6 +524,7 @@ h2 {
 .avatar-list{
   width:60px;
   border-radius:5px;
+  margin-bottom: 5px;
 }
 
 
@@ -560,7 +561,7 @@ h2 {
 .header-landing{
   margin-bottom:5px;
   margin-top:10px;
-  background:url("http://localhost:8000/static/inicio/images/cover.jpg") center center no-repeat;
+  background:url("http://devhunter.co/static/inicio/images/cover.jpg") center center no-repeat;
   background-size: cover;
   height:240px;
   width:100%;
