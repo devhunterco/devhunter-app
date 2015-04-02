@@ -28,7 +28,7 @@ def project_publish(request):
 
         if form.is_valid():
             form.save()
-            return redirect(reverse('feed:proyectos'))
+            return redirect(reverse('feed:projects-active'))
     else:
         form = ProjectForm()
 
