@@ -106,7 +106,8 @@
     {% include 'foro/_header.html' %}
     {% render_messages messages %}
     {% block content %}{% endblock %}
-    <script src="{{STATIC_URL}}foro/scripts/bootstrap.min.js"></script>
+    {% include 'foro/_footer.html' %}
+
 
   </body>
 
