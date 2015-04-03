@@ -4,11 +4,9 @@
 {% if user.is_authenticated %}
     {% populate_bookmarks topics=page user=user  %}
 {% endif %}
-
+<div style="margin-top:40px">
         {% for t in page %}
-            <hr>
-			<div style="padding-top:30px; margin-bottom:30px;">
-
+            <div class="row">
                 <div class="row-title">
                     {% if t.is_pinned %}
                         <i class="fa fa-thumb-tack"></i>
@@ -36,12 +34,8 @@
 
 
                 </div>
+
                 <div class="row-info">
-                    <div>
-
-
-
-                    </div>
                     <div title="{{ t.last_active }}"><i class="fa fa-clock-o"></i> {{ t.last_active|shortnaturaltime }}</div>
                     <div><i class="fa fa-comment"></i> {{ t.comment_count }}</div>
 
@@ -49,13 +43,12 @@
                     </a>
                 </div>
 
+            </div>
+            {% empty %}
+
+            {% endfor %}
+</div>
 
 
-                        {% empty %}
-
-        {% endfor %}
-
-
-			</div>
 
 

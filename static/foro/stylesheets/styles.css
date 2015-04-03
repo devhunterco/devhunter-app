@@ -579,7 +579,7 @@ h2 {
 .header-landing{
   margin-top:15px;
   padding-top:30px;
-  background:url("http://localhost:8000/static/inicio/images/cover.png");
+  background:url("http://devhunter.co/static/inicio/images/cover.png");
   background-repeat: no-repeat;
   background-size: 180px;
   background-position: 600px 105px;
