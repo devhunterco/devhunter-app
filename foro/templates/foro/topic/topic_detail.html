@@ -34,12 +34,10 @@
         </h1>
 
         {% if user.is_moderator %}
-            <div class="topic-moderation js-tabs-container">
-                <a class="dropdown-button js-tab" href="#" data-related=".js-mod-content"><i class="fa fa-cogs"></i></a>
-
-                <div class="tab-content js-tab-content js-mod-content">
-                    <ul class="menu">
-                        <li><a class="menu-link js-show-move-comments" href="#" ><i class="fa fa-comments"></i> {% trans "Select comments to move" %}</a></li>
+            <div class="topic-moderation dropdown">
+                <a class="dropdown-button" id="menu-moderator" data-target="#" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false"><i class="fa fa-cogs"></i></a>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="menu-moderator">
+                    <li><a class="menu-link js-show-move-comments" href="#" ><i class="fa fa-comments"></i> {% trans "Select comments to move" %}</a></li>
 
                         {% if topic.is_removed %}
                             <li><a class="menu-link js-post" href="{% url "foro:topic-undelete" topic.pk %}" ><i class="fa fa-trash-o"></i> {% trans "Undelete topic" %}</a></li>
@@ -58,10 +56,8 @@
                         {% else %}
                             <li><a class="menu-link js-post" href="{% url "foro:topic-pin" topic.pk %}" ><i class="fa fa-thumb-tack"></i> {% trans "Pin topic" %}</a></li>
                         {% endif %}
-                    </ul>
-                </div>
+                </ul>
             </div>
-
 
             <div class="move-comments" style="display:none;">
                 <div class="move-container">

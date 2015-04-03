@@ -815,10 +815,7 @@ input[type="submit"].button,
     border-top: 1px solid rgba(255, 255, 255, 0.1); }
     .side-menu li:last-child {
       border-bottom: rgba(255, 255, 255, 0.1) solid 1px; }
-      .dropdown-menu{
-        right: 0px;
-        left: auto;
-      }
+
       .dropdown-menu li{
         display: block;
         margin-left: 0;
@@ -1304,10 +1301,12 @@ ul.reply-markdown {
   padding: 0 12px; }
 
 .menu-item {
-  padding: 0 12px; }
+  padding: 0 12px;
+  line-height: inherit; }
 
 .menu-username {
-  float: left; }
+  float: left; 
+  font-size: 15px; }
 
 .menu-icon {
   float: right; }

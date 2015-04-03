@@ -9,24 +9,24 @@
         </div>
 
 		<div>
-            {% if category %}
-			    <a class="dropdown-button js-tab" href="#" data-related=".js-categories-content">{{ category.title }} <i class="fa fa-chevron-down"></i></a>
-			{% else %}
-                <a class="dropdown-button js-tab" href="#" data-related=".js-categories-content">Todas las categorias <i class="fa fa-chevron-down"></i></a>
-            {% endif %}
+            <div class="dropdown">
+                {% if category %}
+                    <a class="dropdown-button" id="category" data-target="#" href="" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">{{ category.title }} <i class="fa fa-chevron-down"></i></a>
+    			{% else %}
+                    <a class="dropdown-button" id="category" data-target="#" href="" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">Todas las categorias <i class="fa fa-chevron-down"></i></a>
+                {% endif %}
 
-			<div class="tab-content js-tab-content js-categories-content">
-				<ul class="menu">
-                    {% for c in categories %}
-                        <li><a class="menu-link" href="{{ c.get_absolute_url }}" >{{ c.title }}</a></li>
-                    {% endfor %}
-                    {% if category.parent %}
-                        <li><a class="menu-link" href="{{ category.parent.get_absolute_url }}" >Todas las subcategorias</a></li>
-                    {% else %}
-                        <li><a class="menu-link" href="{% url "foro:topic-active" %}" >Todas las categorias</a></li>
-                    {% endif %}
-				</ul>
-			</div>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="category">
+                        {% for c in categories %}
+                            <li><a class="menu-link" href="{{ c.get_absolute_url }}" >{{ c.title }}</a></li>
+                        {% endfor %}
+                        {% if category.parent %}
+                            <li><a class="menu-link" href="{{ category.parent.get_absolute_url }}" >Todas las subcategorias</a></li>
+                        {% else %}
+                            <li><a class="menu-link" href="{% url "foro:topic-active" %}" >Todas las categorias</a></li>
+                        {% endif %}
+                    </ul>
+            </div>
 		</div>
 
 

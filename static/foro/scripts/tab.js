@@ -66,7 +66,7 @@
       e.stopPropagation();
     };
 
-    //return Tab;
+    return Tab;
 
   })();
 
@@ -74,7 +74,7 @@
     tab: function() {
       return $('.js-tab').each(function() {
         if (!$(this).data('plugin_tab')) {
-          //return $(this).data('plugin_tab', new Tab(this));
+          return $(this).data('plugin_tab', new Tab(this));
         }
       });
     }
