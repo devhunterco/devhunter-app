@@ -78,6 +78,8 @@ class BasicConfigForm(ConfigForm):
                                          label=_("Titulo del landing"),
                                          max_length=60, required=False)
     show_alert_menssage = forms.BooleanField(initial=True,
-                                             label=_("Mostrar alerta"))
+                                             label=_("Mostrar alerta"),
+                                             required=False)
     alert_menssage = forms.CharField(initial="alert_menssage",
-                                     label="Mensaje de alerta", max_length=180)
+                                     label="Mensaje de alerta", max_length=180,
+                                     required=False)

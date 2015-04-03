@@ -1,0 +1,93 @@
+<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+  #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:190px;}
+  /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+     We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="//sidesed.us9.list-manage.com/subscribe/post?u=b72380e2ff45ca5f32976bb26&amp;id=f2ab7ed371" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+
+  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_b72380e2ff45ca5f32976bb26_f2ab7ed371" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+  <div class="row"> <!-- Row #2 -->
+    <div  class="col-md-3 card panel panel-defaul ">
+      <img class="logo-org" src="{{STATIC_URL}}/inicio/images/logo.png" alt="">
+       <p><i class="fa fa-map-marker"></i> Caribe, Colombia</p>
+       <br>
+      <div class=" list-group">
+
+        <a class="list-group-item" href=""> Proximas reuniones  <span class="badge">4</span>  </a>
+        <a class="list-group-item" href=""> Calendario  <i style="float:right;" class="fa fa-calendar"></i> </a>
+        <a class="list-group-item" href=""> Miembros  <span class="badge">{{miembros_count}}</span>  </a>
+        <hr>
+
+
+      </div>
+
+      {% for miembro in miembros_email %}
+        <a href="discusion/user/{{miembro.id}}"><img class="avatar-list" src="{% get_gravatar_url miembro 60 %}" alt=""></a>
+      {% empty %}
+        <p>No hay miembros</p>
+      {% endfor %}
+      <br>
+      <br>
+
+      <h2 ><a class="event-title" href="">Sponsors</a></h2>
+      <hr>
+      <div class="sponsor">
+        <div class="sponsor-logo">
+          <a href="http://brujulab.co"><img src="{{STATIC_URL}}inicio/images/brujulab.png"></a>
+        </div>
+        <a href="http://brujulab.co">Brujulab</a>
+        <p>Diseño y desarrollo web.</p>
+      </div>
+      <hr>
+      <div class="sponsor">
+        <div class="sponsor-logo">
+          <a href="http://caribemesh.org"><img src="{{STATIC_URL}}inicio/images/caribemesh_logo.png"></a>
+        </div>
+        <a href="http://caribemesh.org">Caribemesh</a>
+        <p>Fundacion CaribeMesh Red libre y comunitaria del caribe</p>
+      </div>
+      <hr>
+      <div class="sponsor">
+        <div class="sponsor-logo">
+        <a href="http://www.caribecoders.com"><img style="border-radius: 0.4em;" src="{{STATIC_URL}}inicio/images/caribecoders.png"></a>
+        </div>
+        <a href="http://www.caribecoders.com">Caribe coders</a>
+        <p>Seguridad, consultoria y desarrollo web.</p>
+      </div>
+    </div>
+
+    <div class="col-md-8 panel panel-defaul left-feed"> <!-- Eventos col #1 -->
+
+      {% if config.show_alert_menssage %}
+      <div style="background-color:#e2f5fc; margin-top:10px;" class="alert alert-dismissible alert-success">
+        <button style="color:gray" type="button" class="close" data-dismiss="alert">×</button>
+        <p style="color:gray"><strong>Hola!</strong> {{config.alert_menssage}}</p>
+      </div>
+      {% endif %}
+
+      <h2><strong>Reuniones y eventos</strong></h2>
+        <hr>
+        {% for event in events%}
+        <div class="event">
+          <h2><a class="event-title" href="event/{{event.id}}">{{event.title}}</a></h2>
+              <div class="meta">
+                  <a href=""><i class="fa fa-clock-o"></i> {{event.due_date}}</a>
+                  |
+                  <a href=""><i class="fa fa-file-code-o"></i> {{event.lugar}}</a>
+              </div>
+              <p>{{event.description_short}} </p>
+        </div>
+        {% endfor %}
+    </div>
+
+  </div> <!-- End row #2 -->
+

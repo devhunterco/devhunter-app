@@ -1,81 +1,86 @@
 {% load foro_tags i18n %}
-
-    <header class="header-gray header js-tabs-container">
-
+<header>
   <div style="padding:0;" class="container">
 
-    <a style="" class="header-logo" href="/">
+
+    <a class="header-logo" href="/">
         <img class="logo-brand" src="{{STATIC_URL}}inicio/images/DevHunter-Logo-300-o.png" alt="">
     </a>
+    {% if user.is_authenticated %}
+    {% has_topic_notifications user as has_notifications %}
+      <ul class="header-tabs">
+        <li style="margin-left: 24px;" class="menu-header">
+        <a class="js-tab-notification{% if has_notifications %} is-highlighted{% endif %}" href="" data-related=".js-notifications-content" data-toggle="modal" data-target="#ModalNotification"><i class="fa fa-bell"></i></a></li>
+        <li style="margin-left: 24px;" class="menu-header dropdown">
+        <a class="dropdown-toggle header-tab-link" data-toggle="dropdown" href="#">{{ user.username }} <i class="fa fa-chevron-down"></i></a>
+       <ul class="dropdown-menu">
+          <li><a class="menu-link" href="{% url "foro:profile-detail" pk=user.pk slug=user.slug %}">Mi perfil</a></li>
+          <li><a class="menu-link" href="{% url "foro:topic-active" %}">Temas</a></li>
+          <li><a class="menu-link" href="{% url "foro:topic-unread-list" %}">Temas sin leer</a></li>
+          <li><a class="menu-link" href="{% url "foro:private-list" %}">Temas privados</a></li>
+          {% if user.is_administrator %}
+          <li><a class="menu-link" href="{% url "foro:admin" %}">Administrador</a></li>
+          {% endif %}
+          <li><a class="menu-link js-post" href="{% url "foro:user-logout" %}?next={% firstof request.get_full_path|urlencode '/' %}">Salir</a></li>
+        </ul>
+        </li>
+      </ul>
 
-        {% if user.is_authenticated %}
-            {% has_topic_notifications user as has_notifications %}
-
-            <ul class="header-tabs">
-                <!--<li class="menu-header"><a class="header-tab-link js-tab" href="{% url "foro:search" %}" data-related=".js-search-content"><i class="fa fa-search"></i></a></li>-->
-                <li style="margin-left: 24px;" class="menu-header"><a class="js-tab-notification{% if has_notifications %} is-highlighted{% endif %}" href="" data-related=".js-notifications-content" data-toggle="modal" data-target="#ModalNotification"><i class="fa fa-bell"></i></a></li>
-                <li style="margin-left: 24px;" class="menu-header dropdown">
-                    <a class="dropdown-toggle header-tab-link" data-toggle="dropdown" href="#">{{ user.username }} <i class="fa fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="menu-link" href="{% url "foro:profile-detail" pk=user.pk slug=user.slug %}">Mi perfil</a></li>
-                             <li><a class="menu-link" href="{% url "foro:topic-active" %}">Temas</a></li>
-                                <li><a class="menu-link" href="{% url "foro:topic-unread-list" %}">Temas sin leer</a></li>
-                                <li><a class="menu-link" href="{% url "foro:private-list" %}">Temas privados</a></li>
-
-                                {% if user.is_administrator %}
-                                    <li><a class="menu-link" href="{% url "foro:admin" %}">Administrador</a></li>
-                                {% endif %}
-
-                                <li><a class="menu-link js-post" href="{% url "foro:user-logout" %}?next={% firstof request.get_full_path|urlencode '/' %}">Salir</a></li>
-                        </ul>
-                </li>
-            </ul>
-
-            <div class="header-tabs-content">
-                <div class="header-tab-content js-tab-content js-notifications-content"></div>
-
-                <div class="header-tab-content js-tab-content js-search-content">
-                    {% render_search_form %}
-                </div>
-
+      <div class="header-tabs-content">
+        <div class="header-tab-content js-tab-content js-notifications-content"></div>
+        <div class="header-tab-content js-tab-content js-search-content">
+          {% render_search_form %}
+        </div>
+      </div>
+      <!--Modal-->
+      <div class="modal fade" id="ModalNotification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Notificaciones</h4>
             </div>
-            <!--Modal-->
-            <div class="modal fade" id="ModalNotification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Notificaciones</h4>
-                  </div>
-                  <div class="modal-body">
-                    <div class="js-notifications-content"></div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                  </div>
-                </div>
-              </div>
+            <div class="modal-body">
+              <div class="js-notifications-content"></div>
             </div>
-        {% else %}
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% else %}
 
-            <a class="header-link" href="{% url "foro:user-register" %}?next={% firstof request.get_full_path|urlencode '/' %}"> Registrate</a>
-            <span class="header-link">&nbsp; ó &nbsp;</span>
-            <a class="header-link" href="{% url "foro:user-login" %}?next={% firstof request.get_full_path|urlencode '/' %}">Ingresa <a>
+      <a class="header-link" href="{% url "foro:user-register" %}?next={% firstof request.get_full_path|urlencode '/' %}"> Registrate</a>
+      <span class="header-link">&nbsp; ó &nbsp;</span>
+      <a class="header-link" href="{% url "foro:user-login" %}?next={% firstof request.get_full_path|urlencode '/' %}">Ingresa </a>
 
-        {% endif %}
+      {% endif %}
+  </div>
+</header>
 
-
-
-	</header>
-    <div class="nav-fixed nav">
+<nav class="nav-fixed nav nav-tabs">
         <div style="padding:0" class="container">
         <li><a class="nav-link {% if request.get_full_path = "/" %} nav-link-active {% endif %}  " href="{% url "feed:site-landing" %}">Inicio</a></li>
-        <li><a class="nav-link {% if request.get_full_path = "/discusion/" %} nav-link-active {% endif %} " href="{% url "foro:foro-index" %}">Discusion </a></li>
-        <li><a class="nav-link {% if request.get_full_path = "/projects/" %} nav-link-active {% endif %}" href="{% url "feed:projects-active" %}">Proyectos</a></li>
-        <li><a class="nav-link" href="#">Eventos</a></li>
-        <li><a class="nav-link {% if request.get_full_path = "/equipo/" %} nav-link-active {% endif %}" href="{% url "feed:site-about" %}">Equipo</a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/discusion/" %} nav-link-active {% endif %} " href="{% url "foro:foro-index" %}">Discusiones </a></li>
+
+        <li><a class="nav-link" href="#">Reuniones</a></li>
+
+          <li class="dropdown ">
+    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+      Más</i> <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="{% url "feed:projects-active" %}">Proyectos</a></li>
+      <li><a href="#dropdown1" data-toggle="tab">Eventos</a></li>
+      <li><a href="#dropdown1" data-toggle="tab">Agenda</a></li>
+      <li><a href="#dropdown1" data-toggle="tab">Fotos</a></li>
+      <li><a href="#dropdown2" data-toggle="tab">Sobre</a></li>
+    </ul>
+  </li>
+
         </div>
-    </div>
+    </nav>
 
 
 

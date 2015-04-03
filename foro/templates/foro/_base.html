@@ -9,7 +9,7 @@
     <meta name="description" content="{{ config.site_description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="{{ STATIC_URL }}foro/stylesheets/vendors/bootstrap.min.css">
 
 
@@ -100,13 +100,13 @@
 
   </head>
 
-  <body>
+  <body class="devhunt">
 
 
     {% include 'foro/_header.html' %}
     {% render_messages messages %}
     {% block content %}{% endblock %}
-    {% include 'foro/_footer.html' %}
+    <script src="{{STATIC_URL}}foro/scripts/bootstrap.min.js"></script>
 
   </body>
 
