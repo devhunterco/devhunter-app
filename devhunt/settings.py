@@ -38,7 +38,6 @@ INSTALLED_APPS += (
     'django_gravatar',
 )
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 LANGUAGES = (
     ('es', _('Spanish')),
