@@ -46,6 +46,11 @@ LANGUAGES = (
 
 LANGUAGE_CODE = 'es-co'
 
+TEMPLATE_LOADERS = (
+    'django.template.loaders.app_directories.Loader',
+    'django.template.loaders.filesystem.Loader',
+)
+
 """
 Configuraciones para trabajar en local y en produccion
 

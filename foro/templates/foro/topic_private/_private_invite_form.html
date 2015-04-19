@@ -3,6 +3,5 @@
 <form action="{% url "foro:private-access-create" topic.pk %}" method="post">
     {% csrf_token %}
     {% include "foro/_form.html" %}
-
-    <input class="button" type="submit" value="{% trans "Invite" %}" />
+    <button type="submit" class="btn btn-primary">{% trans "Invite" %}</button>
 </form>
