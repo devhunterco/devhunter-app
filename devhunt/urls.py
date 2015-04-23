@@ -9,8 +9,8 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 # Reemplazar el login para el admin por seguridad
-from django.contrib.auth.decorators import login_required
-admin.site.login = login_required(admin.site.login)
+# from django.contrib.auth.decorators import login_required
+# admin.site.login = login_required(admin.site.login)
 
 urlpatterns = patterns('',
                        url(r'^', include('feed.urls',
@@ -19,6 +19,8 @@ urlpatterns = patterns('',
                        url(r'^discusion/', include('foro.urls',
                                                    namespace="foro",
                                                    app_name="foro")),
+                       # Event checkin admin
+                       url(r'^registro/', include(admin.site.urls)),
                        )
 # Servir archivos estaticos para desarrollo local
 

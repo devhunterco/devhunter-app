@@ -36,6 +36,7 @@ MEDIA_URL = '/media/'
 INSTALLED_APPS += (
     'feed',
     'django_gravatar',
+    'import_export',
 )
 
 
@@ -49,6 +50,21 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
     'django.template.loaders.filesystem.Loader',
 )
+
+SUIT_CONFIG = {
+    'ADMIN_NAME': 'Devhunter - Logistica',
+    'MENU_ICONS': {
+        'sites': 'icon-leaf',
+        'auth': 'icon-lock',
+        'feed': 'icon-qrcode',
+    },
+
+    'MENU': (
+        {'app': 'feed', 'label': 'Registro'},
+    )
+
+
+}
 
 """
 Configuraciones para trabajar en local y en produccion

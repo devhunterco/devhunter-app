@@ -38,7 +38,7 @@ def sender(request, subject, template_name, context, to):
 
 
 def send_activation_email(request, user):
-    subject = _("User activation")
+    subject = _("Activación de usuario")
     template_name = 'foro/user/activation_email.html'
     token = UserActivationTokenGenerator().generate(user)
     context = {'user_id': user.pk, 'token': token}
@@ -46,7 +46,7 @@ def send_activation_email(request, user):
 
 
 def send_email_change_email(request, user, new_email):
-    subject = _("Email change")
+    subject = _("Cambio de correo")
     template_name = 'foro/user/email_change_email.html'
     token = UserEmailChangeTokenGenerator().generate(user, new_email)
     context = {'token': token, }
