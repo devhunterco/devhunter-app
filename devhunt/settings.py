@@ -57,10 +57,14 @@ SUIT_CONFIG = {
         'sites': 'icon-leaf',
         'auth': 'icon-lock',
         'feed': 'icon-qrcode',
-    },
+        'foro': 'icon-user',
+        },
 
     'MENU': (
         {'app': 'feed', 'label': 'Registro'},
+        {'app': 'auth', 'label': 'Seguridad'},
+        {'app': 'foro', 'label': 'Gestion'},
+
     )
 
 
