@@ -20,7 +20,7 @@ urlpatterns = patterns('',
                                                    namespace="foro",
                                                    app_name="foro")),
                        # Event checkin admin
-                       url(r'^registro/', include(admin.site.urls)),
+                       url(r'^logistica/', include(admin.site.urls)),
                        )
 # Servir archivos estaticos para desarrollo local
 
