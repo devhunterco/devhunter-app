@@ -24,7 +24,7 @@ class PresonAdmin(ImportExportModelAdmin):
 
 
 class DeviceAdmin(ImportExportModelAdmin):
-    search_fields = ('device', 'owner', 'serial')
+    search_fields = ('device', 'owner__national_id', 'serial')
     list_display = ('serial', 'color', 'device', 'owner')
     list_display_links = ('serial',)
     raw_id_fields = ('owner',)
