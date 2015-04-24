@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
-
 from django.db import models
 
 
@@ -30,7 +29,7 @@ class Device(models.Model):
     serial = models.CharField(max_length=60, primary_key=True)
     brand = models.CharField(("Marca"), max_length=30)
     device = models.CharField(("Tipo de Dispositivo"), max_length=2, choices=TIPE_DEVICE)
-    owner = models.ForeignKey(("Propietario"), Person)
+    owner = models.ForeignKey(Person, verbose_name='Propietario')
     color = models.CharField(max_length=30, default="None")
 
     def __unicode__(self):
