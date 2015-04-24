@@ -41,4 +41,4 @@ class UserAdmin(admin.ModelAdmin):
 
 admin.site.register(Person, PresonAdmin)
 admin.site.register(Device, DeviceAdmin)
-admin.site.register(User, UserAdmin)
+#admin.site.register(User, UserAdmin)

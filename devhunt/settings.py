@@ -55,15 +55,15 @@ SUIT_CONFIG = {
     'ADMIN_NAME': 'Devhunter - Logistica',
     'MENU_ICONS': {
         'sites': 'icon-leaf',
-        'auth': 'icon-lock',
+        #'auth': 'icon-lock',
         'feed': 'icon-qrcode',
-        'foro': 'icon-user',
+        #'foro': 'icon-user',
         },
 
     'MENU': (
         {'app': 'feed', 'label': 'Registro'},
-        {'app': 'auth', 'label': 'Seguridad'},
-        {'app': 'foro', 'label': 'Gestion'},
+        # {'app': 'auth', 'label': 'Seguridad'},
+        #{'app': 'foro', 'label': 'Gestion'},
 
     )
 
