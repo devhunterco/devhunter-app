@@ -10,6 +10,7 @@ class Person(models.Model):
     fist_name = models.CharField(("Nombre"), max_length=30)
     last_name = models.CharField(("Apellido"), max_length=30)
     asistencia = models.BooleanField(("Asistencia"), default=False)
+    email = models.EmailField(("Correo"), default="None")
 
     def __unicode__(self):
         return unicode(self.national_id)
