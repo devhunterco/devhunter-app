@@ -13,8 +13,8 @@ class PresonAdmin(ImportExportModelAdmin):
 
 
 class DeviceAdmin(ImportExportModelAdmin):
-
-    list_display = ('serial', 'device', 'owner')
+    search_fields = ('device', 'owner', 'serial')
+    list_display = ('serial', 'color', 'device', 'owner')
     list_display_links = ('serial',)
     raw_id_fields = ('owner',)
 
@@ -22,7 +22,7 @@ class DeviceAdmin(ImportExportModelAdmin):
 
 
 class UserAdmin(admin.ModelAdmin):
-
+    search_fields = ('username', 'first_name', 'last_name', 'email')
     list_display = ('email', 'username', 'first_name', 'last_name', 'is_staff')
     list_display_links = ('username',)
 

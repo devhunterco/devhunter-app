@@ -30,6 +30,7 @@ class Device(models.Model):
     brand = models.CharField(max_length=30)
     device = models.CharField(max_length=2, choices=TIPE_DEVICE)
     owner = models.ForeignKey(Person)
+    color = models.CharField(max_length=30, default="None")
 
     def __unicode__(self):
         return unicode(self.serial)
