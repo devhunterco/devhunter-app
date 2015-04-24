@@ -28,9 +28,9 @@ class Device(models.Model):
         (TABLET, 'Tablet')
     )
     serial = models.CharField(max_length=60, primary_key=True)
-    brand = models.CharField(max_length=30)
-    device = models.CharField(max_length=2, choices=TIPE_DEVICE)
-    owner = models.ForeignKey(Person)
+    brand = models.CharField(("Marca"), max_length=30)
+    device = models.CharField(("Tipo de Dispositivo"), max_length=2, choices=TIPE_DEVICE)
+    owner = models.ForeignKey(("Propietario"), Person)
     color = models.CharField(max_length=30, default="None")
 
     def __unicode__(self):
