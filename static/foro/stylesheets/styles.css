@@ -1571,3 +1571,17 @@ div.container {
 .divider-topic{
   margin: 0.3em;
 }
+
+.category-title{
+  background-color: #CECECE;
+  margin-bottom: 0.7em;
+  border-radius: 0.4em;
+}
+  .category-title h2{
+    margin: 0;
+    padding-left: 0.3em;
+  }
+
+  .category-title h2 a{
+    color: #1C1C1C;
+  }

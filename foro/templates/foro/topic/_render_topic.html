@@ -1,18 +1,18 @@
 {% load foro_tags i18n %}
 {% load gravatar %}
-
+<hr class="divider-topic">
  {% for t in page %}
                 
                 {% if t.category.title == categorie.title or t.category.parent.title == categorie.title or t.category.title == category.title and not categorie.title %}
                 <div class="row">
                 
-                    {% if t.is_pinned %}
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        {% if t.is_pinned %}
                         <i class="fa fa-thumb-tack"></i>
                     {% endif %}
                     {% if t.is_closed %}
                         <i class="fa fa-lock"></i>
                     {% endif %}
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                        <a class="row-link" href="{{ t.get_absolute_url }}">{{ t.title }}</a>
 
                        <p class="meta" style="margin: 0;"> {{t.date|date:"d M Y"}} por <a class="meta-link" href="/discusion/user/{{t.user.id}}">{{t.user}}</a>

@@ -32,11 +32,11 @@
       <div class="list-group">
         <a class="list-group-item" href=""> Proximas reuniones  <span class="badge">4</span>  </a>
         <a class="list-group-item" href=""> Calendario <i class="fa right fa-calendar"></i> </a>
+        <a class="list-group-item" href="href={% url "feed:miembros" %}"> Miembros  <span class="badge">{{miembros_count}}</span> </a>
       </div>
 
 
       <div class="members-list">
-        <p><a href={% url "feed:miembros" %}><span style="color:#454545;">Miembros</span> <span class="right">{{miembros_count}} <i class="fa fa-chevron-right"></i></span></a></p>
         {% for miembro in miembros_email %}
           <a href="discusion/user/{{miembro.id}}"><img class="avatar-list" src="{% get_gravatar_url miembro 60 %}" alt=""></a>
         {% empty %}
