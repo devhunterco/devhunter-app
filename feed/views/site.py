@@ -29,6 +29,6 @@ def about(request):
     return render(request, 'site/about.html')
 
 def miembros(request):
-    miembros_activos = User.objects.filter(is_active=True)
+    miembros_activos = User.objects.order_by('date_joined').filter(is_active=True)
     return render(request, 'site/miembros.html',
                     {'miembros':miembros_activos,})
