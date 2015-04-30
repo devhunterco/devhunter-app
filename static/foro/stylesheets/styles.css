@@ -1528,3 +1528,33 @@ div.container {
 .header-project{
   border-radius: 0.8em;
 }
+
+.profile{
+    text-align: left;
+    margin-bottom: 0.5em;
+}
+    .profile a img{
+        vertical-align: top;
+    }
+
+    .profile a article{
+        color: black;
+        margin-top: 1em;
+        display: inline-block;
+        text-align: left;
+        font-size: 1em;
+    }
+
+    .profile a article .name{
+        font-style: italic;
+        font-weight: bolder;
+        margin-bottom: 0;
+    }
+    .profile a:hover{
+      color: gray;
+      text-decoration: none;
+    }
+    .profile a article:hover{
+      color: gray;
+    }
+
