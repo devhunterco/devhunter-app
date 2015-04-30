@@ -6,10 +6,10 @@
 
 {% block content %}
 
-    <div class="container">
+    <div class="container content-head">
 
     {% include "foro/topic/_top_bar.html" with category=category categories=subcategories %}
 
-    {% include "foro/topic/_render_page_list.html" with show_subcategory=True %}
+    {% include "foro/topic/_render_page_list.html" with show_subcategory=True categories=subcategories %}
     </div>
 {% endblock %}

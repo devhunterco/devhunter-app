@@ -615,17 +615,22 @@ h2 {
 
 .sponsor-logo{
   text-align: center;
-background: #eee;
-padding: 8px 2px 2px;
-margin-bottom: 4px;
+  background: #eee;
+  padding: 8px 2px 2px;
+  margin-bottom: 4px;
 }
 
 .card {
   margin-right:10px;
   padding-top:20px;
   padding-bottom:20px;
-
 }
+
+  @media screen and (max-width: 768px) {
+    .card {
+      width: 100%;
+    }  
+  }
 
 .members-list{
   margin-top:20px;
@@ -989,7 +994,8 @@ input[type="submit"].button,
     color: #444444; }
 
 .row-info {
-  float: left;
+  text-align: right;
+  float: right;
   display: block;
   margin-right: 7.42297%;
   width: 100%;
@@ -1002,7 +1008,7 @@ input[type="submit"].button,
       margin-left: 0; }
   @media screen and (min-width: 768px) {
     .row-info {
-      float: left;
+      float: right;
       display: block;
       margin-right: 3.57866%;
       width: 48.21067%;
@@ -1558,3 +1564,10 @@ div.container {
       color: gray;
     }
 
+.content-head{
+  margin-top: 20px;
+}
+
+.divider-topic{
+  margin: 0.3em;
+}

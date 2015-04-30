@@ -1,0 +1,38 @@
+{% load foro_tags i18n %}
+{% load gravatar %}
+
+ {% for t in page %}
+                
+                {% if t.category.title == categorie.title or t.category.parent.title == categorie.title or t.category.title == category.title and not categorie.title %}
+                <div class="row">
+                
+                    {% if t.is_pinned %}
+                        <i class="fa fa-thumb-tack"></i>
+                    {% endif %}
+                    {% if t.is_closed %}
+                        <i class="fa fa-lock"></i>
+                    {% endif %}
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                       <a class="row-link" href="{{ t.get_absolute_url }}">{{ t.title }}</a>
+
+                       <p class="meta" style="margin: 0;"> {{t.date|date:"d M Y"}} por <a class="meta-link" href="/discusion/user/{{t.user.id}}">{{t.user}}</a>
+                       </div>
+
+
+
+                
+
+                <div class="row-info col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div><i class="fa fa-eye"></i> {{t.view_count}}</div>
+                    <div title="{{ t.last_active }}"><i class="fa fa-clock-o"></i> {{ t.last_active|shortnaturaltime }}</div>
+                    <div><i class="fa fa-comment"></i> {{ t.comment_count }}</div>
+
+                    <a href="/discusion/user/{{t.user.id}}" class="hidden-xs"><img style="margin-left:20px ; border-radius: 50%;-webkit-border-radius: 50%;" src="{% gravatar_url t.user.email 40 %}" alt="">
+                    </a>
+                </div>
+
+            </div>
+            <hr class="divider-topic">
+            
+            {% endif %}
+            {% endfor %}
