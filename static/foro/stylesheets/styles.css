@@ -998,7 +998,6 @@ input[type="submit"].button,
   float: right;
   display: block;
   margin-right: 7.42297%;
-  width: 100%;
   color: #979797; }
   .row-info:last-child {
     margin-right: 0; }
@@ -1011,7 +1010,6 @@ input[type="submit"].button,
       float: right;
       display: block;
       margin-right: 3.57866%;
-      width: 48.21067%;
       text-align: right; }
       .row-info:last-child {
         margin-right: 0; } }
