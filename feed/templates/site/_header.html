@@ -1,0 +1,11 @@
+  <div class="row"> <!-- Header landing -->
+    <div class="col-sm-4 col-md-11 header-landing panel panel-defaul">
+      <h1 class="header-title">Bienvenido a la comunidad <br> {{config.site_name}} </h1>
+      {% if user.is_authenticated %}
+        <a class="btn-primary btn-lg call-to-action" href="/discusion/"></i>Participa! </a> &nbsp; &nbsp;
+      {% else %}
+        <a class="btn-primary btn-lg call-to-action" href="/discusion/user/register/">Únete!</a> &nbsp; &nbsp;
+      {% endif %}
+        <span><a class="call-to-more" href="{% url "feed:site-about" %}">Que hacemos</a></span>
+    </div>
+  </div>

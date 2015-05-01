@@ -1,15 +1,9 @@
 {% load i18n %}
 
-        <div style="float:right;" class="new-topic">
-            {% if category %}
-                <a  style="background-color:#3CADD4;"  class="btn btn-success call-to-action" href="{% url "foro:topic-publish" category.pk %}"> Crear un tema</a>
-            {% else %}
-                <a style="background-color:#3CADD4;" class="btn btn-success call-to-action" href="{% url "foro:topic-publish" %}"> Crear un tema</a>
-            {% endif %}
-        </div>
+<div class="topic-top-bar">
 
 
-            <div class="col-lg-4 dropdown">
+        <div style="float:left" class="dropdown">
                 {% if category %}
                     <a class="dropdown-button" id="category" data-target="#" href="" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">{{ category.title }} <i class="fa fa-chevron-down"></i></a>
     			{% else %}
@@ -29,4 +23,14 @@
             </div>
 
 
+
+       <div style="float:right" class="new-topic">
+            {% if category %}
+                <a  style="background-color:#3CADD4;"  class="btn btn-success call-to-action" href="{% url "foro:topic-publish" category.pk %}"> Crear un tema</a>
+            {% else %}
+                <a style="background-color:#3CADD4;" class="btn btn-success call-to-action" href="{% url "foro:topic-publish" %}"> Crear un tema</a>
+            {% endif %}
+        </div>
+
+</div>
 

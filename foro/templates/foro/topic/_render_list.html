@@ -9,8 +9,7 @@
         <div class="row category-title"><h2><a  href="{{ category.get_absolute_url }}">{{category.title}}</a></h2></div>
         {% include "foro/topic/_render_topic.html" %}
     {% endif %}
-    {% for categorie in categories %}
-        <div class="row category-title"><h2><a  href="{{ categorie.get_absolute_url }}">{{categorie.title}}</a></h2></div>
+    {% for category in categories %}
         {% include "foro/topic/_render_topic.html" %}
     {% endfor %}
 </div>
