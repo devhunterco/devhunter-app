@@ -72,7 +72,7 @@
 
 
     <ul class="tabs">
-		<li><a class="tab-link{% ifequal active_tab 0 %} is-selected{% endifequal %}" href="{% url "foro:profile-detail" pk=p_user.pk slug=p_user.slug %}" >Commentarios</a></li><!--
+		<li><a class="tab-link{% ifequal active_tab 0 %} is-selected{% endifequal %}" href="{% url "foro:profile-detail" pk=p_user.pk slug=p_user.slug %}" >Comentarios</a></li><!--
 	 --><li><a class="tab-link{% ifequal active_tab 1 %} is-selected{% endifequal %}" href="{% url "foro:profile-topics" pk=p_user.pk slug=p_user.slug %}" >Temas</a></li><!--
 	 --><li><a class="tab-link{% ifequal active_tab 2 %} is-selected{% endifequal %}" href="{% url "foro:profile-likes" pk=p_user.pk slug=p_user.slug %}" >{% trans "Likes" %}</a></li>
 	</ul>

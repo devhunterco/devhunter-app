@@ -615,17 +615,22 @@ h2 {
 
 .sponsor-logo{
   text-align: center;
-background: #eee;
-padding: 8px 2px 2px;
-margin-bottom: 4px;
+  background: #eee;
+  padding: 8px 2px 2px;
+  margin-bottom: 4px;
 }
 
 .card {
   margin-right:10px;
   padding-top:20px;
   padding-bottom:20px;
-
 }
+
+  @media screen and (max-width: 768px) {
+    .card {
+      width: 100%;
+    }  
+  }
 
 .members-list{
   margin-top:20px;
@@ -989,10 +994,10 @@ input[type="submit"].button,
     color: #444444; }
 
 .row-info {
-  float: left;
+  text-align: right;
+  float: right;
   display: block;
   margin-right: 7.42297%;
-  width: 100%;
   color: #979797; }
   .row-info:last-child {
     margin-right: 0; }
@@ -1002,10 +1007,9 @@ input[type="submit"].button,
       margin-left: 0; }
   @media screen and (min-width: 768px) {
     .row-info {
-      float: left;
+      float: right;
       display: block;
       margin-right: 3.57866%;
-      width: 48.21067%;
       text-align: right; }
       .row-info:last-child {
         margin-right: 0; } }
@@ -1528,3 +1532,54 @@ div.container {
 .header-project{
   border-radius: 0.8em;
 }
+
+.profile{
+    text-align: left;
+    margin-bottom: 0.5em;
+}
+    .profile a img{
+        vertical-align: top;
+    }
+
+    .profile a article{
+        color: black;
+        margin-top: 1em;
+        display: inline-block;
+        text-align: left;
+        font-size: 1em;
+    }
+
+    .profile a article .name{
+        font-style: italic;
+        font-weight: bolder;
+        margin-bottom: 0;
+    }
+    .profile a:hover{
+      color: gray;
+      text-decoration: none;
+    }
+    .profile a article:hover{
+      color: gray;
+    }
+
+.content-head{
+  margin-top: 20px;
+}
+
+.divider-topic{
+  margin: 0.3em;
+}
+
+.category-title{
+  background-color: #CECECE;
+  margin-bottom: 0.7em;
+  border-radius: 0.4em;
+}
+  .category-title h2{
+    margin: 0;
+    padding-left: 0.3em;
+  }
+
+  .category-title h2 a{
+    color: #1C1C1C;
+  }

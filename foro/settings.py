@@ -62,7 +62,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 LOGIN_URL = 'foro:user-login'
-LOGIN_REDIRECT_URL = 'foro:profile-update'
+LOGIN_REDIRECT_URL = 'foro:topic-active'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

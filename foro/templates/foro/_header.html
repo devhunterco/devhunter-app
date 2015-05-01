@@ -62,19 +62,23 @@
         <div style="padding:0" class="container">
         <li><a class="nav-link {% if request.get_full_path = "/" %} nav-link-active {% endif %}  " href="{% url "feed:site-landing" %}">Inicio</a></li>
         <li><a class="nav-link {% if request.get_full_path = "/discusion/" %} nav-link-active {% endif %} " href="{% url "foro:foro-index" %}">Discusiones </a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/projects/" %} nav-link-active {% endif %}" href="{% url "feed:projects-active" %}">Proyectos</a></li>
+        <li><a class="nav-link hidden-xs" href="#">Reuniones</a></li>
+        <li><a class="nav-link hidden-xs" href="#dropdown1" data-toggle="tab">Eventos</a></li>
+        <li><a class="nav-link hidden-xs" href="#dropdown1" data-toggle="tab">Agenda</a></li>
+        <li><a class="nav-link hidden-xs" href="#dropdown1" data-toggle="tab">Fotos</a></li>
+        <li><a class="nav-link hidden-xs {% if request.get_full_path = "/acerca/" %} nav-link-active {% endif %}" href="{% url "feed:site-about" %}">Acerca</a></li>
 
-        <li><a class="nav-link" href="#">Reuniones</a></li>
-
-          <li class="dropdown ">
+          <li class="dropdown visible-xs-inline-block">
     <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
       Más</i> <span class="caret"></span>
     </a>
-    <ul class="dropdown-menu">
-      <li><a href="{% url "feed:projects-active" %}">Proyectos</a></li>
+    <ul class="dropdown-menu dropdown-menu-right">
+      <li><a href="#">Reuniones</a></li>
       <li><a href="#dropdown1" data-toggle="tab">Eventos</a></li>
       <li><a href="#dropdown1" data-toggle="tab">Agenda</a></li>
       <li><a href="#dropdown1" data-toggle="tab">Fotos</a></li>
-      <li><a href="#dropdown2" data-toggle="tab">Sobre</a></li>
+      <li><a href="{% url "feed:site-about" %}">Acerca</a></li>
     </ul>
   </li>
 

@@ -15,7 +15,7 @@ def landing(request):
     topics = topics.order_by('-is_pinned', '-last_active').select_related('category')
     categories = Category.objects.for_parent()
     miembros_email = User.objects.filter(es_destacado=True)
-    miembros_count = User.objects.all().count()
+    miembros_count = User.objects.filter(is_active=True).count()
     events = Event.objects.all()
     return render(request, 'site/landing.html',
                   {'miembros_email': miembros_email,
@@ -27,3 +27,8 @@ def landing(request):
 
 def about(request):
     return render(request, 'site/about.html')
+
+def miembros(request):
+    miembros_activos = User.objects.order_by('date_joined').filter(is_active=True)
+    return render(request, 'site/miembros.html',
+                    {'miembros':miembros_activos,})
