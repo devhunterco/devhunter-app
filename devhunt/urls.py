@@ -19,9 +19,11 @@ urlpatterns = patterns('',
                        url(r'^discusion/', include('foro.urls',
                                                    namespace="foro",
                                                    app_name="foro")),
-                       # Event checkin admin
                        url(r'^logistica/', include(admin.site.urls)),
+                       url(r'^calendar/', include('agenda.urls')),
+                        url(r'^fotos/', include('photologue.urls', namespace='photologue')),
                        )
+
 # Servir archivos estaticos para desarrollo local
 
 if settings.DEBUG:

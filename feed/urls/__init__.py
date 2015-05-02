@@ -31,4 +31,7 @@ urlpatterns = patterns('',
                        url(r'^miembros/',
                            'feed.views.site.miembros',
                            name='miembros'),
+                       url(r'^agenda/',
+                           'feed.views.site.agenda',
+                           name='agenda'),
                        )

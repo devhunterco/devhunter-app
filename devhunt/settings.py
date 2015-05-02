@@ -11,6 +11,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = False
 
+SITE_ID = "2"
+
 TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['*']
@@ -37,6 +39,9 @@ INSTALLED_APPS += (
     'feed',
     'django_gravatar',
     'import_export',
+    'agenda',
+    'photologue',
+    'sortedm2m',
 )
 
 
@@ -53,20 +58,6 @@ TEMPLATE_LOADERS = (
 
 SUIT_CONFIG = {
     'ADMIN_NAME': 'Devhunter - Logistica',
-    'MENU_ICONS': {
-        'sites': 'icon-leaf',
-        #'auth': 'icon-lock',
-        'feed': 'icon-qrcode',
-        #'foro': 'icon-user',
-        },
-
-    'MENU': (
-        {'app': 'feed', 'label': 'Registro'},
-        # {'app': 'auth', 'label': 'Seguridad'},
-        #{'app': 'foro', 'label': 'Gestion'},
-
-    )
-
 
 }
 

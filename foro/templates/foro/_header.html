@@ -15,11 +15,6 @@
         <a data-toggle="dropdown" href="#" class="dropdown-toggle header-tab-link"><i class="fa fa-ellipsis-v more-options"></i></a>
         <ul class="dropdown-menu ">
             <li><a href="" class="menu-link">Blog</a></li>
-            <li><a href="" class="menu-link">Eventos</a></li>
-            <li><a href="" class="menu-link">Agenda</a></li>
-            <li><a href="" class="menu-link">Fotos</a></li>
-            <li><a href="" class="menu-linl">Comunidad</a></li>
-            <li><a href="" class="menu-linl">Chat</a></li>
             <li class="divider"></li>
             <li><a href="" class="menu-link">Sobre nosotros</a></li>
           </ul>
@@ -86,6 +81,7 @@
         <div style="padding:0" class="container">
         <li><a class="nav-link {% if request.get_full_path = "/" %} nav-link-active {% endif %}  " href="{% url "feed:site-landing" %}">Inicio</a></li>
         <li><a class="nav-link {% if request.get_full_path = "/discusion/" %} nav-link-active {% endif %} " href="{% url "foro:foro-index" %}">Discusiones </a></li>
+        <li><a href="/fotos" class="nav-link">Fotos</a></li>
     </nav>
 
 

@@ -28,6 +28,11 @@ def landing(request):
 def about(request):
     return render(request, 'site/about.html')
 
+
+def agenda(request):
+    return render(request, 'site/agenda.html')
+
+
 def miembros(request):
     miembros_activos = User.objects.order_by('date_joined').filter(is_active=True)
     return render(request, 'site/miembros.html',

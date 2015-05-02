@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load agenda %}
+
+{% block content %}
+<div class="row-fluid">
+    <div class="span12">
+        {% bootstrap_controls 'from-inline' %}
+        <br>
+    </div>
+</div>
+<div class="clear-fix">
+</div>
+<div class="row">
+    <div class="span7">
+        {% bootstrap_calendar '' %}
+
+    </div>
+
+</div>
+{% endblock %}
