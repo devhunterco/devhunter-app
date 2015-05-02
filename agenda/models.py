@@ -24,6 +24,7 @@ class CalendarEvent(models.Model):
     start = models.DateTimeField(verbose_name=_('Start Date'))
     end = models.DateTimeField(verbose_name=_('End Date'), null=True,
                                blank=True)
+    description = models.TextField(max_length=255, verbose_name=_('Descrip'), null=True, blank=True)
 
     @property
     def start_timestamp(self):

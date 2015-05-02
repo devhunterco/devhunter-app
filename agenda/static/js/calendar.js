@@ -42,7 +42,7 @@ if(!String.prototype.formatNum) {
 		// Width of the calendar
 		width:              '100%',
 		// Initial view (can be 'month', 'week', 'day')
-		view:               'week',
+		view:               'month',
 		// Initial date. No matter month, week or day this will be a starting point. Can be 'now' or a date in format 'yyyy-mm-dd'
 		day:                'now',
 		// Day Start time and end time with time intervals. Time split 10, 15 or 30.
@@ -82,11 +82,11 @@ if(!String.prototype.formatNum) {
 			}
 		},
 		// ID of the element of modal window. If set, events URLs will be opened in modal windows.
-		modal:              null,
+		modal:         "#events-modal",
 		//	modal handling setting, one of "iframe", "ajax" or "template"
-		modal_type:         "iframe",
+		modal_type:         "template",
 		//	function to set modal title, will be passed the event as a parameter
-		modal_title:        null,
+		modal_title:        function(event) { return event.title },
 		views:              {
 			year:  {
 				slide_events: 1,
