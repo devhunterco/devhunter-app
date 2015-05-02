@@ -12,7 +12,7 @@
       <ul class="header-tabs">
 
               <li class="menu-header dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle header-tab-link"><i class="fa fa-ellipsis-v more-options"></i></a>
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle header-tab-link"><i class="fa fa-ellipsis-h more-options"></i></a>
         <ul class="dropdown-menu ">
             <li><a href="" class="menu-link">Blog</a></li>
             <li class="divider"></li>
@@ -65,9 +65,11 @@
       </div>
       {% else %}
 
-      <a class="header-link" href="{% url "foro:user-register" %}?next={% firstof request.get_full_path|urlencode '/' %}"> Registrate</a>
-      <span class="header-link">&nbsp; ó &nbsp;</span>
-      <a class="header-link" href="{% url "foro:user-login" %}?next={% firstof request.get_full_path|urlencode '/' %}">Ingresa </a>
+      <span style="float:left;">
+              <a class="header-btn" href="{% url "foro:user-register" %}?next={% firstof request.get_full_path|urlencode '/' %}"> Únete</a>
+
+      <a class="link-none" href="{% url "foro:user-login" %}?next={% firstof request.get_full_path|urlencode '/' %}"><strong>Ingresar</strong> </a>
+      </span>
 
 
 

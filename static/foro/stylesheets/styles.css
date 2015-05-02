@@ -526,8 +526,27 @@ h2 {
   font-size:17px;
 }
 
+.header-btn {
+  padding:5px;
+  border-radius:4px;
+  border:1px solid gray;
+  margin-right:20px;
+}
+
+.link-none:hover{
+  text-decoration:none;
+}
+
+.header-btn:hover {
+  text-decoration:none;
+}
+
 .more-options{
-    padding: 5px;
+    padding-top: 5px;
+    padding-left:20px;
+    font-size:28px;
+    top: 5px;
+    position: relative;
 }
 
 
