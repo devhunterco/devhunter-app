@@ -71,12 +71,12 @@ def bootstrap_calendar_init(*args, **kwargs):
     try:
         options["view"] = kwargs["view"]
     except KeyError:
-        options["view"] = 'month'
+        options["view"] = 'year'
 
     try:
         options["language"] = kwargs["language"]
     except KeyError:
-        options["language"] = 'en'
+        options["language"] = 'es'
 
     try:
         options["first_day"] = kwargs["first_day"]

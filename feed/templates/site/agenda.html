@@ -4,8 +4,9 @@
 
 {% block content %}
 <div class="container">
-<h2><strong>Agenda</strong></h2>
+<h2><strong><i class="fa fa-calendar"></i> Agenda</strong> <small>{% now "Y" %}</small></h2>
 <hr>
+
 {% include "django_bootstrap_calendar/calendar.html"%}
 
 <div class="modal fade" id="events-modal">
