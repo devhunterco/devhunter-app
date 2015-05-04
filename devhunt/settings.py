@@ -11,8 +11,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = False
 
-SITE_ID = "2"
-
 TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['*']
@@ -40,8 +38,6 @@ INSTALLED_APPS += (
     'django_gravatar',
     'import_export',
     'agenda',
-    'photologue',
-    'sortedm2m',
 )
 
 

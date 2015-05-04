@@ -21,7 +21,6 @@ urlpatterns = patterns('',
                                                    app_name="foro")),
                        url(r'^logistica/', include(admin.site.urls)),
                        url(r'^calendar/', include('agenda.urls')),
-                        url(r'^fotos/', include('photologue.urls', namespace='photologue')),
                        )
 
 # Servir archivos estaticos para desarrollo local
