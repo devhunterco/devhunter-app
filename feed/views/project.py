@@ -4,11 +4,12 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.urlresolvers import reverse
-from feed.forms.projects import ProjectForm
+# from feed.forms.projects import ProjectForm
 from foro.utils.decorators import administrator_required
-from feed.models import Project
+# from feed.models import Project
 
 
+"""
 def projects_active(request):
     proyectos = Project.objects.all()
     return render(request, 'project/projects_active.html',
@@ -46,3 +47,4 @@ def project_update(request, pk):
         form = ProjectForm(instance=proyecto)
 
     return render(request, 'project/project_update.html', {'form': form})
+"""

@@ -13,13 +13,10 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # admin.site.login = login_required(admin.site.login)
 
 urlpatterns = patterns('',
-                       url(r'^', include('feed.urls',
-                                         namespace="feed",
-                                         app_name="feed")),
+                       
                        url(r'^discusion/', include('foro.urls',
                                                    namespace="foro",
                                                    app_name="foro")),
-                       url(r'^logistica/', include(admin.site.urls)),
                        url(r'^calendar/', include('agenda.urls')),
                        )
 

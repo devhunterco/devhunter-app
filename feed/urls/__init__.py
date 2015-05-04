@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 from django.conf.urls import patterns, url
 
-
+"""
 urlpatterns = patterns('',
                        url(r'^$', 'feed.views.site.landing',
                            name='site-landing'),
@@ -29,3 +29,4 @@ urlpatterns = patterns('',
                            'feed.views.site.agenda',
                            name='agenda'),
                        )
+"""

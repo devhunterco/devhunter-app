@@ -1,9 +1,10 @@
 from django.contrib import admin
-from import_export.admin import ImportExportModelAdmin
-from checkin import Person, Device
-from import_export import resources
-from foro.models.user import User
+#from import_export.admin import ImportExportModelAdmin
+#from checkin import Person, Device
+#from import_export import resources
+#from foro.models.user import User
 
+"""
 
 class PresonResource(resources.ModelResource):
 
@@ -42,3 +43,4 @@ class UserAdmin(admin.ModelAdmin):
 admin.site.register(Person, PresonAdmin)
 admin.site.register(Device, DeviceAdmin)
 #admin.site.register(User, UserAdmin)
+"""

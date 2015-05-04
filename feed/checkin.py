@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 from django.db import models
 
+"""
 
 class Person(models.Model):
     national_id = models.CharField(("Cédula"), max_length=60, primary_key=True)
@@ -38,3 +39,4 @@ class Device(models.Model):
     class Meta:
         verbose_name = "Dispositivo"
         verbose_name_plural = "Dispositivos"
+"""
