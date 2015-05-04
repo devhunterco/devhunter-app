@@ -11,7 +11,7 @@ class PresonResource(resources.ModelResource):
         model = Person
         exclude = ('asistencia')
         import_id_fields = ['national_id']
-        fields = ('national_id', 'fist_name', 'last_name', 'email')
+        fields = ('national_id', 'fist_name', 'last_name', 'email', 'asistencia')
 
 
 class PresonAdmin(ImportExportModelAdmin):
