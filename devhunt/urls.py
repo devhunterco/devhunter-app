@@ -14,10 +14,10 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = patterns('',
                        
-                       url(r'^discusion/', include('foro.urls',
+                       url(r'^', include('foro.urls',
                                                    namespace="foro",
                                                    app_name="foro")),
-                       url(r'^calendar/', include('agenda.urls')),
+                       #url(r'^calendar/', include('agenda.urls')),
                        )
 
 # Servir archivos estaticos para desarrollo local

@@ -35,8 +35,7 @@ MEDIA_URL = '/media/'
 
 INSTALLED_APPS += (
     'django_gravatar',
-    'import_export',
-    'agenda',
+    #'agenda',
 )
 
 
@@ -50,11 +49,6 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
     'django.template.loaders.filesystem.Loader',
 )
-
-SUIT_CONFIG = {
-    'ADMIN_NAME': 'Devhunter - Logistica',
-
-}
 
 """
 Configuraciones para trabajar en local y en produccion
