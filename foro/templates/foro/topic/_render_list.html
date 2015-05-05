@@ -5,11 +5,7 @@
     {% populate_bookmarks topics=page user=user  %}
 {% endif %}
 <div style="margin-top:40px">
-    {% if show_subcategory %}
-        <div class="row category-title"><h2><a  href="{{ category.get_absolute_url }}">{{category.title}}</a></h2></div>
+
         {% include "foro/topic/_render_topic.html" %}
-    {% endif %}
-    {% for category in categories %}
-        {% include "foro/topic/_render_topic.html" %}
-    {% endfor %}
+
 </div>

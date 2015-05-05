@@ -1,7 +1,7 @@
 {% load foro_tags i18n %}
 {% load gravatar %}
 {% for t in page %}
-    {% if t.category.title == categorie.title or t.category.parent.title == categorie.title or t.category.title == category.title and not categorie.title or show_subcategories and t.category.parent.title == t.category.parent.title %}
+  
         <div class="row topic-post">
             <div class="col-lg-7 col-md-6 col-sm-7 col-xs-12">
                 {% if t.is_pinned %}
@@ -21,5 +21,4 @@
                 </a>
             </div>
         </div>
-    {% endif %}
 {% endfor %}
