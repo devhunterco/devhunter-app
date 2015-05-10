@@ -34,7 +34,14 @@
     <meta name="msapplication-TileImage" content="{{STATIC_URL}}favicons/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
+    <script src="{{ STATIC_URL }}foro/scripts/vendors/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
+    <script src="{{ STATIC_URL }}foro/scripts/tab.js"></script>
+    <script src="{{ STATIC_URL }}foro/scripts/postify.js"></script>
+{% if user.is_authenticated %}
+    <script src="{{ STATIC_URL }}foro/scripts/notification.js"></script>
+{% endif %}
     {% block js_app %}{% endblock%}
 
    
@@ -65,7 +72,6 @@
 
 	</script>
 
-    {% block head-extra %}{% endblock %}
 
     <!--[if (lt IE 9) & (!IEMobile)]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
@@ -74,8 +80,10 @@
 
   </head>
 
-
+    {% include "devhunt/_header.html"%}
     {% block body_app %} {% endblock %}
 
+    
+    
 
 </html>

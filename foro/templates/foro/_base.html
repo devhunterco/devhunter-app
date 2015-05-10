@@ -9,11 +9,8 @@
 {% endblock %}
 
 {% block js_app %}
-    <script src="{{ STATIC_URL }}foro/scripts/vendors/jquery.min.js"></script>
     <script src="{{ STATIC_URL }}foro/scripts/vendors/highlightjs/highlight.min.js"></script>
     <script src="{{ STATIC_URL }}foro/scripts/util.js"></script>
-    <script src="{{ STATIC_URL }}foro/scripts/tab.js"></script>
-    <script src="{{ STATIC_URL }}foro/scripts/postify.js"></script>
     <script src="{{ STATIC_URL }}foro/scripts/social_share.js"></script>
 {% if user.is_authenticated %}
     <script src="{{ STATIC_URL }}foro/scripts/vendors/atwho/jquery.caret.min.js"></script>
@@ -26,7 +23,6 @@
     <script src="{{ STATIC_URL }}foro/scripts/emoji_list.js"></script>
     <script src="{{ STATIC_URL }}foro/scripts/like.js"></script>
     <script src="{{ STATIC_URL }}foro/scripts/bookmark.js"></script>
-    <script src="{{ STATIC_URL }}foro/scripts/notification.js"></script>
 {% endif %}
 
 {% if user.is_moderator %}
@@ -36,12 +32,10 @@
 {% endblock %}
 
 {% block body_app %}
-
 <body class="devhunt-foro">
-    {% include 'devhunt/_header.html' %}
+
     {% render_messages messages %}
     {% block content %}{% endblock %}
-    {% include 'devhunt/_footer.html' %}
-</body>
 
+</body>
 {% endblock %}

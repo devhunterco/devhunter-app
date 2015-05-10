@@ -10,14 +10,19 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = patterns('',
 
-					   #url(r'^agenda/', include('agenda.urls',
-					   #							namespace="agenda",
-					   #							app_name="agenda")),
+              url(r'^$', 'devhunt.views.home',
+                           name='home'),
 
-                       url(r'^discusiones', include('foro.urls',
-                                                   namespace="foro",
-                                                   app_name="foro")),
-                       )
+					    url(r'^agenda/', include('agenda.urls',
+					    							   namespace="agenda",
+					    							   app_name="agenda")),
+
+              url(r'^discusiones/', include('foro.urls',
+                                   namespace="foro",
+                                   app_name="foro")),
+              url(r'^devhunt/', include(admin.site.urls)),
+                       
+                      )
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

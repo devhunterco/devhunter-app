@@ -1,0 +1,31 @@
+ {% load foro_tags i18n %}
+ <div class="row">
+    <div class="col-md-3 card panel">
+      <span>Organización</span> <br>
+      <span style="color:gray;">Fundado Dic 20, 2014</span>
+      <br>
+      <br>
+      <p><span class="location"></i> <span class="local">Caribe</span>, <br> <span class="contry">Colombia</span></span> <br>
+      </p>
+
+      <div class="list-group">
+        <a class="list-group-item" href="/agenda"> Agenda <i class="fa right fa-calendar"></i> </a>
+        <a class="list-group-item" href="#"> Miembros  <span class="badge">{{miembros_count}}</span> </a>
+      </div>
+
+
+      <div class="members-list">
+        {% for miembro in miembros_email %}
+          <a href="discusion/user/{{miembro.id}}"><img class="avatar-list" src="{% get_gravatar_url miembro 60 %}" alt=""></a>
+        {% empty %}
+          <p>No hay miembros</p>
+        {% endfor %}
+      </div>
+      <hr>
+      <div class="external-links-container">
+        <a href="https://www.facebook.com/pages/DevHunter/875157369193280" class="external-link"><i class="fa fa-facebook-square"></i></a>
+        <a href="https://twitter.com/DevHunterCo" class="external-link"><i class="fa fa-20 fa-twitter"></i></a>
+        <a href="https://github.com/devhunterco" class="external-link"><i class="fa fa-20 fa-github"></i></a>
+        {% include "devhunt/_sponsors.html"%}
+      </div>
+    </div>

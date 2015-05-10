@@ -1,6 +1,6 @@
 {% load gravatar %}
 
-{% load foro_tags i18n tz %}
+{% load foro_tags i18n  %}
 
 <header>
   <div style="padding:0;" class="container">
@@ -12,7 +12,9 @@
 
       <ul class="header-tabs">
 
-              <li class="menu-header dropdown">
+      <!--
+
+      <li class="menu-header dropdown">
         <a data-toggle="dropdown" href="#" class="dropdown-toggle header-tab-link"><i class="fa fa-ellipsis-h more-options"></i></a>
         <ul class="dropdown-menu ">
             <li><a href="" class="menu-link">Blog</a></li>
@@ -20,8 +22,8 @@
             <li><a href="" class="menu-link">Sobre nosotros</a></li>
           </ul>
 
-        </li>
-
+      </li>
+      -->
     {% if user.is_authenticated %}
     {% has_topic_notifications user as has_notifications %}
                     <li style="margin-left: 24px;" class="menu-header">
@@ -82,8 +84,9 @@
 
 <nav class="nav-fixed nav nav-tabs">
         <div style="padding:0" class="container">
-        <li><a class="nav-link {% if request.get_full_path = "/" %} nav-link-active {% endif %}  " href="#">Inicio</a></li>
-        <li><a class="nav-link {% if request.get_full_path = "/discusiones" %} nav-link-active {% endif %} " href="{% url "foro:foro-index" %}">Discusiones </a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/" %} nav-link-active {% endif %}  " href="/">Inicio</a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/discusiones/" %} nav-link-active {% endif %} " href="{% url "foro:foro-index" %}">Discusiones </a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/agenda/" %} nav-link-active {% endif %} " href="/agenda/">Agenda </a></li>
 </nav>
 
 
