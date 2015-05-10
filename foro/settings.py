@@ -29,21 +29,7 @@ ST_USER_LAST_SEEN_THRESHOLD_MINUTES = 1
 ST_PRIVATE_FORUM = False
 
 ST_ALLOWED_UPLOAD_IMAGE_FORMAT = ('jpeg', 'png', 'gif')
-#
-# Django & foro settings defined below...
-#
 
-INSTALLED_APPS = (
-    'suit',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'foro',
-    # 'foro.tests'
-)
 
 # python manage.py createcachetable foro_cache
 CACHES = {
@@ -104,10 +90,6 @@ TEMPLATE_LOADERS = (
 
 # django-djconfig
 
-INSTALLED_APPS += (
-    'djconfig',
-)
-
 DJC_BACKEND = 'djconfig'
 
 CACHES.update({
@@ -126,9 +108,6 @@ TEMPLATE_CONTEXT_PROCESSORS += (
 
 # django-haystack
 
-INSTALLED_APPS += (
-    'haystack',
-)
 
 HAYSTACK_CONNECTIONS = {
     'default': {

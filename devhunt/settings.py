@@ -1,13 +1,38 @@
+# -*- coding: utf-8 -*-
 """
-Configuraciones de Django para el proyecto devhunt.
+DEVHUNT GENERAL PROJECT SETTINGS
 """
 from __future__ import unicode_literals
+from django.utils.translation import ugettext_lazy as _
 import os
 
-# Extender configuraciones del la app para el foro
-from foro.settings import *
-from django.utils.translation import ugettext_lazy as _
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+# Apps specifics settings
+from foro.settings import *
+
+
+PROJECT_APPS = [
+    # Project
+    'devhunt',
+    # Reusable apps
+	'foro',
+	'agenda',
+]
+
+THIRD_PARTY_APPS = [
+	'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django_gravatar',
+    'djconfig',
+    'haystack',
+]
+
+INSTALLED_APPS = THIRD_PARTY_APPS + PROJECT_APPS
 
 DEBUG = False
 
@@ -18,8 +43,6 @@ ALLOWED_HOSTS = ['*']
 ROOT_URLCONF = 'devhunt.urls'
 
 WSGI_APPLICATION = 'devhunt.wsgi.application'
-
-# Zona horaia destino
 
 TIME_ZONE = 'America/Bogota'
 
@@ -33,11 +56,6 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
-INSTALLED_APPS += (
-    'django_gravatar',
-    #'agenda',
-)
-
 
 LANGUAGES = (
     ('es', _('Spanish')),
@@ -50,23 +68,15 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
 )
 
-"""
-Configuraciones para trabajar en local y en produccion
 
-Incluir configuracon local de ejemplo
-Descargar -> https://gist.github.com/5a6fa6eebb997a709040.git
-o hacer su propia configuracion local.
-"""
+# Use debug, sqlite, staticfiles dirs etc..
 
 try:
     from .local_settings import *
 except ImportError:
     pass
 
-"""
-Solo para servidor de produccion, de esta forma se protejen claves secretas
-como la conexion a la db, api keys y la configuracion smtp.
-"""
+# Production database, smtp, roots etc..
 
 try:
     from .production_settings import *

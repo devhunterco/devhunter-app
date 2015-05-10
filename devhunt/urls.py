@@ -8,19 +8,16 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-# Reemplazar el login para el admin por seguridad
-# from django.contrib.auth.decorators import login_required
-# admin.site.login = login_required(admin.site.login)
-
 urlpatterns = patterns('',
-                       
-                       url(r'^', include('foro.urls',
+
+					   #url(r'^agenda/', include('agenda.urls',
+					   #							namespace="agenda",
+					   #							app_name="agenda")),
+
+                       url(r'^discusiones', include('foro.urls',
                                                    namespace="foro",
                                                    app_name="foro")),
-                       #url(r'^calendar/', include('agenda.urls')),
                        )
-
-# Servir archivos estaticos para desarrollo local
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
