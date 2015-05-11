@@ -55,7 +55,7 @@
   <a href="{% url "evento:event-detail" id_event=actividad.id %}" class="list-group-item">
   <span style="text-transform:uppercase; color:gray; font-size:14px">{{actividad.start}}</span>
     <h4 style="color:#3CADD4;" class="list-group-item-heading link">{{actividad.title}}</h4>
-    <p>{{actividad.description | slice:":170" | markdown }} ...</p>
+    {{actividad.description | slice:":170" | markdown }} ...
   </a>
   </div>
 
