@@ -13,6 +13,10 @@ urlpatterns = patterns('',
               url(r'^$', 'devhunt.views.home',
                            name='home'),
 
+              url(r'^miembros/',
+                           'devhunt.views.miembros',
+                           name='miembros'),
+
               url(r'^devhunt/', include(admin.site.urls)),
 
 					    url(r'^agenda/', include('agenda.urls',
@@ -24,7 +28,6 @@ urlpatterns = patterns('',
                                    app_name="foro")),
               url(r'^eventos/', include('evento.urls',
                                   namespace="evento")),
-                       
                       )
 
 if settings.DEBUG:

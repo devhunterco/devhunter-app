@@ -15,7 +15,7 @@
 }
 
 @media (min-width: 992px){
-.col-md-3 {
+.small-md {
   width: 20% !important;
 }
 

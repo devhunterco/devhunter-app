@@ -1,4 +1,5 @@
 {% extends 'devhunt/_base.html' %}
+{% load markdown_deux_tags %}
 
 {% block body_app %}
 <body class="devhunt-foro">
@@ -8,7 +9,7 @@
 {% include "devhunt/_call_to_action.html"%}
 {% include "devhunt/left_panel.html"%}
 
-<div class="col-md-7 card panel">
+<div class="col-md-8 panel">
     
 
 <div class="page-header">
@@ -16,7 +17,25 @@
     <p style="text-transform:uppercase; color:gray; font-size:14px">{{event.start}}</p>
     <span> <a href=""><li class="fa fa-map-marker"></li> {{event.lugar}}</span></a>		<br> <br>		
 
-    <p>{{event.description}}</p>
+    <p>{{event.description | markdown}}</p>
+</div>
+<br>	
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'devhunterco';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
 </div>
 
 

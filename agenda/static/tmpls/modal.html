@@ -2,9 +2,9 @@
 	event.date_end = new Date(parseInt(event.end)); %>
 <div id = "event-meta" class  = "pull-right">
     <span>Empieza el <%= event.date_start.getDate() %> <%= calendar.locale["m" + event.date_start.getMonth()] %> <%= event.date_start.getFullYear() %>, at <%= event.date_start.getHours() %>:<%= event.date_start.getMinutes() %> <i class = "icon-time"></i></span><br />
-    <span>Termina en <%= event.date_end.getDate() %> <%= calendar.locale["m" + event.date_end.getMonth()] %> <%= event.date_end.getFullYear() %> at <%= event.date_end.getHours() %>:<%= event.date_end.getMinutes() %> <i class = "icon-time"></i></span><br />
+    <span>Termina en <%= event.date_end.getDate() %> <%= calendar.locale["m" + event.date_end.getMonth()] %> <%= event.date_end.getFullYear() %> a las <%= event.date_end.getHours() %>:<%= event.date_end.getMinutes() %> <i class = "icon-time"></i></span><br />
 </div>
 
 <div style = "margin: 10px 0">
-    <a href = "<%= event.url %>" class = "btn btn-primary"><i class = "icon-calendar"></i> Más información</a>
+    <a href = "/eventos/<%= event.id %>" class = "btn btn-primary"><i class = "icon-calendar"></i> Más información</a>
 </div>

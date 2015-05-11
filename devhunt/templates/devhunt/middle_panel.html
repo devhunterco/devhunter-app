@@ -1,63 +1,17 @@
-<div class="col-md-7 card panel">
+
+<div class="col-md-8 panel">
     
 
 <div class="page-header">
     <h1 style="margin-bottom:0"><strong>Reuniones</strong></h1>
-    <hr>
 </div>
+ {% include "devhunt/mail_suscribe.html"%}
+
+
+ {% include "devhunt/events.html"%}
 
 
 
-  <ul id="events-menu" class="nav nav-pills">
-  <li class="active"><a  href="#prox-act" data-toggle="tab" aria-expanded="true">Proximas <span style="background-color:#E2574C; color:white;" class="badge"></span></a></li>
-  <li class=""><a href="#pasadas-act" data-toggle="tab" aria-expanded="false">Pasadas <span  class="badge"></span></a> </li>
-  <li class=""><a href="#sugeridas-act" data-toggle="tab" aria-expanded="false">Sugeridas</a></li>
-
-  </ul>
-
-
-
-<div id="myTabContent" class="tab-content">
-  <div class="tab-pane fade  active in" id="prox-act">
-
-  {% if prox_actividades %}
-
-  {% for actividad in prox_actividades %}
-
-  <div class="list-group">
-  <a href="{% url "evento:event-detail" id_event=actividad.id %}" class="list-group-item">
-  <span style="text-transform:uppercase; color:gray; font-size:14px">{{actividad.start}}</span>
-    <h4 style="color:#3CADD4;" class="list-group-item-heading link">{{actividad.title}}</h4>
-    <p>{{actividad.description | slice:":170" }} ...</p>
-  </a>
-  </div>
-
-  {% endfor %}
-
-  {% else %}
-
-  <img style="margin-left:70px; margin-top:30px;" src="{{STATIC_URL}}/inicio/images/rocket.png" alt="">
-    <div style="float:right; margin-right:80px;"><h1><strong>No tenemos actividades <br> pendientes</strong></h1>
-    <p style="color:gray">¿Tienes alguna idea?</p>
-
-
-    <p> <a class="btn-primary-2 btn-lg call-to-action" href="#">Sugerir</a></p>
-
-    </div>
-
-  {% endif %}
-
-
-
-  </div>
-  <div class="tab-pane fade" id="pasadas-act">
-    <p>Actividades pasadas</p>
-  </div>
-
-  <div class="tab-pane fade" id="sugeridas-act">
-    <p>Actividades sugeridas </p>
-  </div>
-</div>
 
 
 </div>

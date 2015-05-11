@@ -31,6 +31,8 @@ THIRD_PARTY_APPS = [
     'django_gravatar',
     'djconfig',
     'haystack',
+    'pagedown',
+    'markdown_deux',
 ]
 
 INSTALLED_APPS = THIRD_PARTY_APPS + PROJECT_APPS

@@ -1,0 +1,71 @@
+{% load markdown_deux_tags %}
+ <ul id="events-menu" class="nav nav-pills">
+  <li class="active"><a  href="#prox-act" data-toggle="tab" aria-expanded="true">Próximas <span style="background-color:#E2574C; color:white;" class="badge">{{prox_actividades_count}}</span></a></li>
+  <li class=""><a href="#pasadas-act" data-toggle="tab" aria-expanded="false">Pasadas <span  class="badge">{{past_actividades_count}}</span></a> </li>
+
+  </ul>
+
+
+
+<div id="myTabContent" class="tab-content">
+
+<br>
+  <div class="tab-pane fade  active in" id="prox-act">
+
+  {% if prox_actividades %}
+
+  {% for actividad in prox_actividades %}
+
+  <div class="list-group">
+  <a href="{% url "evento:event-detail" id_event=actividad.id %}" class="list-group-item">
+  <span style="text-transform:uppercase; color:gray; font-size:14px">{{actividad.start}}</span>
+    <h4 style="color:#3CADD4;" class="list-group-item-heading link">{{actividad.title}}</h4>
+    <p>{{actividad.description | slice:":170" | markdown }} ...</p>
+  </a>
+  </div>
+
+  {% endfor %}
+
+  {% else %}
+
+  <img style="margin-left:80px; margin-top:30px;" src="{{STATIC_URL}}/inicio/images/rocket.png" alt="">
+    <div style="float:right; margin-right:80px;"><h1><strong>No tenemos actividades <br> próximas.</strong></h1>
+    <p style="color:gray">Puedes ver {{past_actividades_count}} reuniones pasadas <br> o proponer una en las discusiones ! </p>
+
+
+    <p> <a class="btn-primary-2 btn-lg call-to-action" href="#pasadas-act" data-toggle="tab" aria-expanded="false">Ver</a>
+
+        <a class="btn-primary btn-lg call-to-action" href="/discusiones" >Ir a discusiones</a></p>
+
+
+
+    </div>
+
+  {% endif %}
+
+
+
+  </div>
+  <div class="tab-pane fade" id="pasadas-act">
+     {% if past_actividades %}
+
+  {% for actividad in past_actividades %}
+
+  <div class="list-group">
+  <a href="{% url "evento:event-detail" id_event=actividad.id %}" class="list-group-item">
+  <span style="text-transform:uppercase; color:gray; font-size:14px">{{actividad.start}}</span>
+    <h4 style="color:#3CADD4;" class="list-group-item-heading link">{{actividad.title}}</h4>
+    <p>{{actividad.description | slice:":170" | markdown }} ...</p>
+  </a>
+  </div>
+
+  {% endfor %}
+  {% endif %}
+  </div>
+
+  <div class="tab-pane fade" id="sugeridas-act">
+    <p>Actividades sugeridas </p>
+  </div>
+  <br>
+  <br>
+</div>
