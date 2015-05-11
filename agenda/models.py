@@ -26,6 +26,8 @@ class CalendarEvent(models.Model):
                                blank=True)
     description = models.TextField(max_length=255, verbose_name=_('Descrip'), null=True, blank=True)
 
+    lugar = models.CharField(max_length=255, verbose_name=_('Lugar'), null=True)
+
     @property
     def start_timestamp(self):
         """

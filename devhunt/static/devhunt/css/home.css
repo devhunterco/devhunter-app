@@ -1,0 +1,15 @@
+#events-menu {
+	background-color: #EEE;
+	padding: 0 0 0 10px;
+}
+
+
+#events-menu > .active > a {
+	background-color: white;
+	color: #848484;
+	border-radius: 0;
+}
+
+.page-header{
+	margin: 0 !important;
+}
