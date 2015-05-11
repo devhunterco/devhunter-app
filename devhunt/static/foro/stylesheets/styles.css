@@ -693,7 +693,7 @@ margin-left:5px;
 }
 
 .card {
-  margin-right:10px;
+  margin-right:8px;
   padding-top:20px;
   padding-bottom:20px;
 }
@@ -765,7 +765,7 @@ width: 73.86666667%;
 
 @media (min-width: 1200px) {
   .container {
-    width: 920px !important;
+    width: 980px !important;
   }
 }
 

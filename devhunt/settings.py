@@ -16,6 +16,7 @@ PROJECT_APPS = [
     # Project
     'devhunt',
     # Reusable apps
+    'evento',
 	'foro',
 	'agenda',
 ]

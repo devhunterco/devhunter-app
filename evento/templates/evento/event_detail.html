@@ -1,0 +1,26 @@
+{% extends 'devhunt/_base.html' %}
+
+{% block body_app %}
+<body class="devhunt-foro">
+
+<div class="container">
+	
+{% include "devhunt/_call_to_action.html"%}
+{% include "devhunt/left_panel.html"%}
+
+<div class="col-md-7 card panel">
+    
+
+<div class="page-header">
+    <h3 style="margin-bottom:0"><strong>{{event.title}}</strong></h3>
+    <p style="text-transform:uppercase; color:gray; font-size:14px">{{event.start}}</p>
+    <span> <a href=""><li class="fa fa-map-marker"></li> {{event.lugar}}</span></a>		<br> <br>		
+
+    <p>{{event.description}}</p>
+</div>
+
+
+
+
+</body>
+{% endblock %}

@@ -13,6 +13,8 @@ urlpatterns = patterns('',
               url(r'^$', 'devhunt.views.home',
                            name='home'),
 
+              url(r'^devhunt/', include(admin.site.urls)),
+
 					    url(r'^agenda/', include('agenda.urls',
 					    							   namespace="agenda",
 					    							   app_name="agenda")),
@@ -20,7 +22,8 @@ urlpatterns = patterns('',
               url(r'^discusiones/', include('foro.urls',
                                    namespace="foro",
                                    app_name="foro")),
-              url(r'^devhunt/', include(admin.site.urls)),
+              url(r'^eventos/', include('evento.urls',
+                                  namespace="evento")),
                        
                       )
 

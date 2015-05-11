@@ -1,9 +1,9 @@
-<div style="padding:0 15px 0 15px" class="col-md-8 panel">
-    {% include "devhunt/mail_suscribe.html"%}
+<div class="col-md-7 card panel">
+    
 
 <div class="page-header">
-    <h1 style="margin:0"><strong>Reuniones</strong></h1>
-    <p class="lead">Actividades de la comunidad</p>
+    <h1 style="margin-bottom:0"><strong>Reuniones</strong></h1>
+    <hr>
 </div>
 
 
@@ -25,10 +25,10 @@
   {% for actividad in prox_actividades %}
 
   <div class="list-group">
-  <a href="#" class="list-group-item">
+  <a href="{% url "evento:event-detail" id_event=actividad.id %}" class="list-group-item">
   <span style="text-transform:uppercase; color:gray; font-size:14px">{{actividad.start}}</span>
     <h4 style="color:#3CADD4;" class="list-group-item-heading link">{{actividad.title}}</h4>
-    <p >{{actividad.description}}</p>
+    <p>{{actividad.description | slice:":170" }} ...</p>
   </a>
   </div>
 
@@ -55,7 +55,7 @@
   </div>
 
   <div class="tab-pane fade" id="sugeridas-act">
-    <p>Actividades sujeridas</p>
+    <p>Actividades sugeridas </p>
   </div>
 </div>
 

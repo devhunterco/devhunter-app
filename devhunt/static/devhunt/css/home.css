@@ -13,3 +13,10 @@
 .page-header{
 	margin: 0 !important;
 }
+
+@media (min-width: 992px){
+.col-md-3 {
+  width: 20% !important;
+}
+
+}
