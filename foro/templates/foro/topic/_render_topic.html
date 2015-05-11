@@ -11,7 +11,7 @@
                     <i class="fa fa-lock"></i>
                 {% endif %}
                     <a class="row-link" href="{{ t.get_absolute_url }}">{{ t.title }}</a>
-                    <p class="meta" style="margin: 0;"> {{t.date|date:"d M Y"}} por <a class="meta-link" href="/user/{{t.user.id}}">{{t.user}}</a>
+                    <p class="meta" style="margin: 0;"> {{t.date|date:"d M Y"}} por <a class="meta-link" href="/discusiones/user/{{t.user.id}}">{{t.user}}</a>
             </div>
             <div class="row-info col-lg-5 col-md-6 col-sm-5 col-xs-12">
              {{t.view_count}} <i class="fa fa-eye"></i>
