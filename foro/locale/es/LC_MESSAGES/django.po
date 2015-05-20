@@ -480,11 +480,11 @@ msgstr "Configuración basica"
 #: .\templates\spirit\admin\_side_menu.html:11
 #: .\templates\spirit\admin\index\dashboard.html:47
 msgid "Categories"
-msgstr "categorias"
+msgstr "Categorias"
 
 #: .\templates\spirit\admin\_side_menu.html:13
 msgid "Users"
-msgstr "usuarios"
+msgstr "Usuarios"
 
 #: .\templates\spirit\admin\_side_menu.html:14
 #: .\templates\spirit\admin\comment_flag\flag_detail.html:11

@@ -16,7 +16,7 @@ def home(request):
     topics = topics.order_by('-is_pinned', '-last_active').select_related('category')
     categories = Category.objects.for_parent()
     miembros_email = User.objects.filter(es_destacado=True)
-    miembros_count = User.objects.all().count()
+    miembros_count = User.objects.filter(is_active=True).count()
     today = datetime.datetime.today()
     past_actividades = CalendarEvent.objects.filter(Q(start__lte=today))
     past_actividades_count = CalendarEvent.objects.filter(Q(start__lte=today)).count()
