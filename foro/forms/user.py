@@ -17,7 +17,7 @@ class RegistrationForm(UserCreationForm):
 
     #honeypot = forms.CharField(label=_("Leave blank"), required=False)
 
-    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Elije un nombre de usuario'}))
+    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Nombre de usuario'}))
 
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Crea una contraseña'}))
 

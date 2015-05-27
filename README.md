@@ -1,16 +1,13 @@
 
 
-## Devhunter ![Coverage](https://img.shields.io/teamcity/coverage/bt1242.svg)
+## Devhunt-community
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/devhunterco)
 
 
 Esta app esta construida con Python utilizando Django como framework.
 
-La idea es que podamos tener nuestra propia red, planear, comunicar, organizar y mostrar nuestro trabajo. Esto nos permitira tener identidad y sentido de pertenencia.
-
-Inicialmente se trabajara en un modulo que ponga a disposición todas las funcionalidades de un foro, cualquiera podra registrase y participar.
-
+La idea es bridar todos los features necesarios para organizar cualquier comunidad.
 
 ## Configuración 
 
@@ -23,13 +20,18 @@ Inicialmente se trabajara en un modulo que ponga a disposición todas las funcio
 -  Sincronizar los modelos `./manage.py syncdb`
 -  Crear las tablas para los indices del cache `./manage.py createcachetable foro_cache`
 -  Correr el servidor `./manage.py runserver`
--  Happy coding :D 
+-  Happy coding :D
+
+
+## Todo list
+
+- [ ] Integración Auth con githubs
 
 
 ### Relase v0.2
 
-- [ ] Integración Auth con github
-- [x] Modulo: chat real-time con Nodejs
+- [x] Modulo eventos
+- [x] Calendario
 
 ### Relase v0.1
 
