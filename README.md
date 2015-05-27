@@ -5,9 +5,8 @@
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/devhunterco)
 
 
-Esta app esta construida con Python utilizando Django como framework.
+La idea de esta iniciativa es bridar todos los features necesarios para organizar cualquier comunidad.
 
-La idea es bridar todos los features necesarios para organizar cualquier comunidad.
 
 ## Configuración 
 

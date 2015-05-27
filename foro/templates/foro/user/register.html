@@ -4,20 +4,20 @@
 
 {% block title %}Únete{% endblock %}
 
-{% block head-extra %}
-    <script>
 
-	$( document ).ready(function() {
+
+{% block content %}
+
+<script>
+
+    $( document ).ready(function() {
 
         $( "input[name=honeypot]" ).hide();
         $( "label[for=id_honeypot]" ).hide();
 
-	});
+    });
 
-	</script>
-{% endblock %}
-
-{% block content %}
+</script>
 
 <div  style="text-align: center;" class="container">
 

@@ -15,7 +15,7 @@ User = get_user_model()
 
 class RegistrationForm(UserCreationForm):
 
-    #honeypot = forms.CharField(label=_("Leave blank"), required=False)
+    honeypot = forms.CharField(label=_("Leave blank"), required=False)
 
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Nombre de usuario'}))
 
