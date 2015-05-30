@@ -12,7 +12,7 @@
 <br>
 			{%for miembro in miembros_activos %}
 			<div class="col-lg-3 col-sm-4 col-xs-6 profile">
-				<a href="discusion/user/{{miembro.id}}/">
+				<a href="/discusiones/user/{{miembro.id}}/">
                 <img class="img-circle" src="{% get_gravatar_url miembro 60 %}">
                 <article>
                     <p class="name">@{{miembro.username}}</p>
