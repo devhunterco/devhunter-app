@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>{% block title %}{% endblock %} &middot; {{ config.site_name }} </title>
+    <title>{% if request.get_full_path = "/" %} {{ config.site_name }} {% else %} {% block title %}{% endblock %} &middot; {{ config.site_name }} {% endif%}</title>
     <meta name="description" content="{{ config.site_description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -45,7 +45,7 @@
 {% endif %}
     {% block js_app %}{% endblock%}
 
-   
+
 
     <script>
 
@@ -84,7 +84,7 @@
     {% include "devhunt/_header.html"%}
     {% block body_app %} {% endblock %}
 
-    
-    
+
+
 
 </html>

@@ -376,7 +376,7 @@ i {
 
 p {
   margin: 0;
-  margin-bottom: 24px; }
+  margin-bottom: 10px; }
 
 hr {
   display: block;
@@ -675,9 +675,9 @@ margin-left:5px;
 }
 
 .header-title{
-  font-weight:600;
+  font-weight:500;
   color:white;
-  font-size:35px;
+  font-size:30px;
 }
 
 .logo-brand{
@@ -765,7 +765,7 @@ width: 73.86666667%;
 
 @media (min-width: 1200px) {
   .container {
-    width: 980px !important;
+    width: 850px !important;
   }
 }
 

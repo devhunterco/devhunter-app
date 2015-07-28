@@ -1,0 +1,31 @@
+{% load gravatar %}
+ {% load foro_tags i18n %}
+<br>
+<br>
+<div class="col-md-7 past-event-list border-right border-left">
+    <h2 class="col-title">Últimos comentarios</h2>
+    <ul class="media-list">
+        {% for comment in lasted_comments%}
+        <li class="media">
+            <a href="#" class="pull-left">
+                <img src="{% gravatar_url comment.user.email 60 %}" alt="" class="img-circle">
+            </a>
+                <div class="media-body">
+                        <span class="text-muted pull-right">
+                        <small class="text-muted">Hace {{comment.date|shortnaturaltime}}</small>
+                    </span>
+                <strong><a  href="#">@{{comment.user.username}}</a></strong>
+                    <p>
+                        {{comment.comment}} en <a href="#">{{comment.topic}} </a>.
+
+                    </p>
+
+</div>
+
+<a style="color:#E2574C;" href="#"><li style="color:#E2574C;" class="fa fa-heart"></li> {{comment.likes_count}}</a>
+</li>
+{%endfor%}
+</ul>
+
+</div>
+</div>

@@ -1,5 +1,5 @@
 {% extends "devhunt/_base.html" %}
-{% block title %} Comunidad {% endblock %}
+
 
 
 {% block body_app %}
@@ -8,13 +8,15 @@
 <div class="container">
 
 {% include "devhunt/_call_to_action.html"%}
+
+{% include "devhunt/events.html"%}
+
 {% include "devhunt/left_panel.html"%}
-{% include "devhunt/middle_panel.html"%}
 
-
+{% include "devhunt/feed.html"%}
 
 </div>
 
-</body> 
+</body>
 
 {% endblock %}
