@@ -1,13 +1,80 @@
+<footer id="footer">
 
-    <footer class="footer">
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
 
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contacto</h3>
+						<div class="widget-body">
+							<p>Escribenos a <a href="mailto:contacto@devhunter.co">contacto@devhunter.co</a><br>
+								<a href="mailto:#"></a><br>
+								<br>
+								Monteria, Colombia
+							</p>
+						</div>
+					</div>
 
-		<div class="container">
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Siguenos</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons">
+								<a href="https://twitter.com/DevHunterCo"><i class="fa fa-twitter fa-2"></i></a>
+								<a href="https://github.com/devhunterco"><i class="fa fa-github fa-2"></i></a>
+								<a href="https://www.facebook.com/pages/DevHunter/875157369193280"><i class="fa fa-facebook fa-2"></i></a>
+							</p>
+						</div>
+					</div>
 
+                    <div class="col-md-3 widget">
+						<h3 class="widget-title">Devhunter</h3>
+                        <iframe src="https://ghbtns.com/github-btn.html?user=devhunterco&repo=devhunt&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+                        <br>
+						<div class="widget-body">
+		                          <ul>
+		    			  			  <li><a href="/agenda">Agenda</a></li>
+                                      <li><a href="{% url "foro:foro-index" %}">Discusiones</a></li>
+									  <li><a href="http://blog.devhunter.co">Blog</a></li>
 
-        <p style="float:right"> <a href="https://github.com/devhunterco/devhunter-app"><i class="fa fa-code"></i> Este sitio es Open Source</a> </p>
+		                          </ul>
 
+						</div>
+					</div>
+
+					<div class="col-md-3 widget">
+						<img src="{{STATIC_URL}}devhunt/img/logo-devhunter.png" alt="" />
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
 		</div>
-	</footer>
 
-<script src="{{STATIC_URL}}foro/scripts/bootstrap.min.js"></script>
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="simplenav">
+								<a href="/">Inicio</a> |
+								<a href="/sobre/">Sobre Nosotros</a> |
+
+								<b><a href="/discusiones/user/register/">Registro</a></b>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Devhunter, 2015
+							</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+	</footer>

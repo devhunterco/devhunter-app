@@ -10,16 +10,16 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = patterns('',
 
-              url(r'^$', 'devhunt.views.home',
-                           name='home'),
+                       url(r'^$', 'devhunt.views.home',
+                                  name='home'),
+                       url(r'^miembros/', 'devhunt.views.miembros',
+                                          name='miembros'),
+                       url(r'^sobre/', 'devhunt.views.sobre',
+                                       name='about'),
 
-              url(r'^miembros/',
-                           'devhunt.views.miembros',
-                           name='miembros'),
+                       url(r'^devhunt/', include(admin.site.urls)),
 
-              url(r'^devhunt/', include(admin.site.urls)),
-
-					    url(r'^agenda/', include('agenda.urls',
+			           url(r'^agenda/', include('agenda.urls',
 					    							   namespace="agenda",
 					    							   app_name="agenda")),
 

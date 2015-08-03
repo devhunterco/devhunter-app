@@ -8,7 +8,7 @@
         {% for comment in lasted_comments%}
         <li class="media">
             <a href="#" class="pull-left">
-                <img src="{% gravatar_url comment.user.email 60 %}" alt="" class="img-circle">
+                <img  src="{% gravatar_url comment.user.email 45 %}" alt="" class="avatar-user">
             </a>
                 <div class="media-body">
                         <span class="text-muted pull-right">
@@ -27,5 +27,13 @@
 {%endfor%}
 </ul>
 
+<br>
+
+<small>Foto: <a href="#">Evento Appdays FirefoxOS, </a> Universidad de Córdoba 2015</small>
+<img src="{{STATIC_URL}}devhunt/img/appdays.jpg" alt="" />
+
 </div>
+
+
+
 </div>

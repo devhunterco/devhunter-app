@@ -542,11 +542,12 @@ h2 {
 }
 
 .more-options{
-    padding-top: 5px;
-    padding-left:20px;
-    font-size:28px;
+    padding-top: 8px;
+    
+    font-size:25px !important;
     top: 5px;
     position: relative;
+    text-decoration: none !important;
 }
 
 
@@ -681,8 +682,7 @@ margin-left:5px;
 }
 
 .logo-brand{
-  width: 170px;
-  height: 31px;
+  height: 27px;
 }
 
 .sponsor-logo{

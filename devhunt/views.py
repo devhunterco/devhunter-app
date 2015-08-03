@@ -42,3 +42,7 @@ def miembros(request):
     miembros_activos = User.objects.order_by('date_joined').filter(is_active=True)
     return render(request, 'devhunt/miembros.html',
                            {'miembros_activos': miembros_activos})
+
+
+def sobre(request):
+    return render(request, 'devhunt/about.html')

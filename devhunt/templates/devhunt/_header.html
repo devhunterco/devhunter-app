@@ -12,25 +12,28 @@
 
       <ul class="header-tabs">
 
-      <!--
 
-      <li class="menu-header dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle header-tab-link"><i class="fa fa-ellipsis-h more-options"></i></a>
+
+      <li class="menu-header dropdown ">
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle header-tab-link"><span class="genericon genericon-ellipsis more-options"></span></a>
         <ul class="dropdown-menu ">
-            <li><a href="" class="menu-link">Blog</a></li>
-            <li class="divider"></li>
-            <li><a href="" class="menu-link">Sobre nosotros</a></li>
+            <li><a href="/sobre/" class="menu-link">Sobre</a></li>
+            <li><a href="http://blog.devhunter.co" class="menu-link">Blog</a></li>
+
+
+
           </ul>
 
       </li>
-      -->
+
     {% if user.is_authenticated %}
     {% has_topic_notifications user as has_notifications %}
                     <li style="margin-left: 24px;" class="menu-header">
-        <a class="header-tab-link js-tab-notification{% if has_notifications %} is-highlighted{% endif %}" href="" data-related=".js-notifications-content" data-toggle="modal" data-target="#ModalNotification"><i class="fa fa-bell"></i></a></li>
-        <li style="margin-left: 24px;" class="menu-header dropdown">
-          <img class="avatar-user" src="{% gravatar_url user.email size=35 %}" alt="">
-          <a class="dropdown-toggle header-tab-link" data-toggle="dropdown" href="#">{{ user.username }} <i class="fa fa-chevron-down"></i></a>
+        <a class="header-tab-link js-tab-notification{% if has_notifications %} is-highlighted{% endif %}" href="" data-related=".js-notifications-content" data-toggle="modal" data-target="#ModalNotification"><i style="font-size:15px" class="fa fa-bell"></i></a></li>
+        <li style="    padding-left: 24px;
+    border-left: 1px solid #eee;" class="menu-header dropdown">
+
+          <a class="dropdown-toggle header-tab-link" data-toggle="dropdown" href="#">  <img class="avatar-user" src="{% gravatar_url user.email size=35 %}" alt=""> </a>
          <ul class="dropdown-menu dropdown-menu-right">
             <li><a class="menu-link" href="{% url "foro:profile-detail" pk=user.pk slug=user.slug %}">Mi perfil</a></li>
             <li><a class="menu-link" href="{% url "foro:profile-update" %}">Preferencias</a></li>
@@ -42,6 +45,8 @@
             <li><a class="menu-link js-post" href="{% url "foro:user-logout" %}?next={% firstof request.get_full_path|urlencode '/' %}">Salir</a></li>
           </ul>
         </li>
+
+        <li><a class="more-options" href="{% url "foro:topic-publish" %}"><i style="color:rgba(60, 173, 212, 0.5); font-size:25px" class="fa fa-plus-square-o"></i></a></li>
       </ul>
 
       <div class="header-tabs-content">

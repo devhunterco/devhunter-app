@@ -29,7 +29,8 @@
     <p style="color:gray">Pero puedes proponer una! </p>
 
     <br>
-    <p> <a class="btn-primary-2 btn-lg call-to-action" href="#pasadas-act" data-toggle="tab" aria-expanded="false">Proponer</a>
+
+<a class="btn-primary-2 btn-lg call-to-action" href="{% url "foro:topic-publish" %}">Proponer</a>
 
 
 </div>
@@ -47,16 +48,6 @@
         </a>
 
          {{actividad.description | slice:":100" | markdown }}
-
-         <span class="event-butom">
-             <a href="#"><i class="fa fa-share-square-o"></i></a>
-             <a href="#"><i class="fa fa-star"></i></a>
-             <a href="#"><i class="fa fa-comment-o"></i></a>
-
-         </span>
-
-         <br>
-         <br>
 
         </div>
 
