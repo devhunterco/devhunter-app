@@ -47,6 +47,10 @@ ROOT_URLCONF = 'devhunt.urls'
 
 WSGI_APPLICATION = 'devhunt.wsgi.application'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+DEFAULT_FROM_EMAIL = 'Comunidad devhunter <usuarios@devhunter.co>'
+
 TIME_ZONE = 'America/Bogota'
 
 USE_I18N = True
