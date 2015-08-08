@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.shortcuts import render
 from foro.models.user import User
+from django.shortcuts import get_object_or_404
 from foro.models.category import Category
 from foro.models.topic import Topic
 from foro.models.comment import Comment
@@ -37,11 +38,14 @@ def home(request):
                    'lasted_comments': lasted_comments
                    })
 
-
-def miembros(request):
+def members(request):
     miembros_activos = User.objects.order_by('date_joined').filter(is_active=True)
     return render(request, 'devhunt/miembros.html',
                            {'miembros_activos': miembros_activos})
+
+def member_profile(request, username):
+    p_user = get_object_or_404(User, username=username)
+    return render(request, 'devhunt/user/profile.html', {'p_user': p_user})
 
 
 def sobre(request):
