@@ -10,11 +10,11 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = patterns('',
 
-                       url(r'^$', 'devhunt.views.home',
+                       url(r'^$', 'core.site.home',
                                   name='home'),
-                       url(r'^miembros/', 'devhunt.views.members',
+                       url(r'^miembros/', 'core.site.members',
                                           name='miembros'),
-                       url(r'^sobre/', 'devhunt.views.sobre',
+                       url(r'^sobre/', 'core.site.sobre',
                                        name='about'),
 
                        url(r'^devhunt/', include(admin.site.urls)),
@@ -28,7 +28,8 @@ urlpatterns = patterns('',
                        url(r'^eventos/', include('evento.urls',
                                                  namespace="evento")),
                        url(r'(?P<username>[\w-]+)',
-                           'devhunt.views.member_profile'),
+                           'core.site.member_profile'),
+
                        )
 
 if settings.DEBUG:

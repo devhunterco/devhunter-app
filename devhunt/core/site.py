@@ -38,10 +38,12 @@ def home(request):
                    'lasted_comments': lasted_comments
                    })
 
+
 def members(request):
     miembros_activos = User.objects.order_by('date_joined').filter(is_active=True)
     return render(request, 'devhunt/miembros.html',
                            {'miembros_activos': miembros_activos})
+
 
 def member_profile(request, username):
     p_user = get_object_or_404(User, username=username)

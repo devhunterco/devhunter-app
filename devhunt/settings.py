@@ -6,6 +6,7 @@ from __future__ import unicode_literals
 from django.utils.translation import ugettext_lazy as _
 import os
 
+PROJECT_ROOT = os.path.dirname(__file__)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Apps specifics settings
@@ -16,6 +17,7 @@ PROJECT_APPS = [
     # Project
     'devhunt',
     # Reusable apps
+    'core',
     'evento',
 	'foro',
 	'agenda',
