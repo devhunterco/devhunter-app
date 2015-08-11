@@ -1,6 +1,6 @@
 
 
-## Devhunt-community
+## Devhunt-community ![](https://travis-ci.org/devhunterco/devhunt.svg?branch=master)
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/devhunterco)
 
@@ -8,7 +8,7 @@
 La idea de esta iniciativa es bridar todos los features necesarios para organizar cualquier comunidad.
 
 
-## Configuración 
+## Configuración
 
 
 - Incluir el archivo `local_settigs.py` en el directorio devhunt [Descargar aquí](https://gist.github.com/uzi200/5a6fa6eebb997a709040)
@@ -41,7 +41,7 @@ La idea de esta iniciativa es bridar todos los features necesarios para organiza
 
 
 
-### Frameworks / API's 
+### Frameworks / API's
 
 - [Django 1.7](https://github.com/django/django)
 - [Spirit 0.1.3](https://github.com/nitely/Spirit/tree/master)
