@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from foro.utils.models import AutoSlugField
+from ..utils.models import AutoSlugField
 
 
 class AutoSlugModel(models.Model):
