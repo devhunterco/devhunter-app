@@ -5,7 +5,7 @@
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/devhunterco)
 
 
-La idea de esta iniciativa es bridar todos los features necesarios para organizar cualquier comunidad.
+La idea de esta iniciativa es ofrecer todos los features necesarios para organizar cualquier comunidad.
 
 
 ## Configuración
