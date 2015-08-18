@@ -11,7 +11,7 @@ La idea de esta iniciativa es ofrecer todos los features necesarios para organiz
 ## Configuración
 
 
-- Incluir el archivo `local_settigs.py` en el directorio devhunt [Descargar aquí](https://gist.github.com/uzi200/5a6fa6eebb997a709040)
+- Incluir el archivo `local_settigs.py` en el directorio devhunt [Ejemplo](https://gist.github.com/uzi200/5a6fa6eebb997a709040)
 -  Instalar virtualenv `sudo pip install virtualenv`
 -  En el repo hacer `virtualenv env && source env/bin/activate`
 -  Instalar todas las dependencias `pip install -r requirements.txt`

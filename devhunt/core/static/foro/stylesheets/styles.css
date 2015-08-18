@@ -543,7 +543,7 @@ h2 {
 
 .more-options{
     padding-top: 8px;
-    
+
     font-size:25px !important;
     top: 5px;
     position: relative;
@@ -649,7 +649,7 @@ margin-left:5px;
 .header-landing{
   margin-top:15px;
   padding-top:30px;
-  background:url("http://devhunter.co/static/inicio/images/cover.png");
+  background:url("https://devhunter.co/static/inicio/images/cover.png");
   background-repeat: no-repeat;
   background-size: 180px;
   background-position: 600px 105px;
