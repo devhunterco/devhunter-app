@@ -7,14 +7,14 @@
     <ul class="media-list">
         {% for comment in lasted_comments%}
         <li class="media">
-            <a href="#" class="pull-left">
+            <a href="/{{comment.user.username}}" class="pull-left">
                 <img  src="{% gravatar_url comment.user.email 45 %}" alt="" class="avatar-user">
             </a>
                 <div class="media-body">
                         <span class="text-muted pull-right">
-                        <small class="text-muted">Hace {{comment.date|shortnaturaltime}}</small>
+                        <small class="text-muted">{{comment.date|shortnaturaltime}}</small>
                     </span>
-                <strong><a  href="#">@{{comment.user.username}}</a></strong>
+                <strong><a  href="/{{comment.user.username}}/">@{{comment.user.username}}</a></strong>
                     <p>
                         {{comment.comment}} en <a href="/discusiones/topic/{{comment.topic.id}}">{{comment.topic}} </a>.
 
