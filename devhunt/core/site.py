@@ -52,3 +52,7 @@ def member_profile(request, username):
 
 def sobre(request):
     return render(request, 'devhunt/about.html')
+
+
+def slack(request):
+    return render(request, 'devhunt/slack.html')

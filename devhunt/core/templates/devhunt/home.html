@@ -1,22 +1,17 @@
 {% extends "devhunt/_base.html" %}
 
-
-
 {% block body_app %}
-
 <body class="devhunt-home">
-<div class="container">
+    <div class="container">
 
-{% include "devhunt/_call_to_action.html"%}
+        {% include "devhunt/_call_to_action.html"%}
 
-{% include "devhunt/events.html"%}
+        {% include "devhunt/events.html"%}
 
-{% include "devhunt/left_panel.html"%}
+        {% include "devhunt/left_panel.html"%}
 
-{% include "devhunt/feed.html"%}
+        {% include "devhunt/feed.html"%}
 
-</div>
-
+    </div>
 </body>
-
 {% endblock %}

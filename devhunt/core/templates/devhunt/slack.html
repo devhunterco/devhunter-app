@@ -1,0 +1,23 @@
+{% extends "devhunt/_base.html" %}
+{% block title %}Slack{% endblock %}
+ {% load foro_tags i18n %}
+
+{% block body_app %}
+<div style="text-align:center;" class="container">
+<br>
+<br>
+    <div  class="row">
+
+    <h1 style="margin:0">Mantente en contacto</h1>
+    <p style="color:gray">
+        Aprende, contribuye, relacionate
+    </p>
+
+        <iframe src="http://localhost:3000/iframe/dialog" width="" height=""></iframe>
+        <p>
+            <a href="https://devhunterco.slack.com"><small>ó Ingresa</small></a>
+        </p>
+    </div>
+
+</div>
+{% endblock %}
