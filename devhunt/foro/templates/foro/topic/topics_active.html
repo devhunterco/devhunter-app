@@ -1,10 +1,11 @@
-{% extends "foro/_base.html" %}
+{% extends "devhunt/_base.html" %}
 
 {% load i18n %}
 
 {% block title %}Discusiones{% endblock %}
 
-{% block content %}
+{% block body_app %}
+{% include "devhunt/_nav.html"%}
     <div class="container content-head">
     {% include "foro/topic/_top_bar.html" with category=None categories=categories %}
     {% include "foro/topic/_render_page_list.html" %}

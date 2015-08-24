@@ -86,11 +86,3 @@
 
   </div>
 </header>
-
-<nav class="nav-fixed nav nav-tabs">
-        <div class="container">
-        <li><a class="nav-link {% if request.get_full_path = "/" %} nav-link-active {% endif %}  " href="/">Inicio</a></li>
-        <li><a class="nav-link {% if request.get_full_path = "/discusiones/" %} nav-link-active {% endif %} " href="{% url "foro:foro-index" %}">Discusiones </a></li>
-        <li><a class="nav-link {% if request.get_full_path = "/agenda/" %} nav-link-active {% endif %} " href="/agenda/">Agenda </a></li>
-        <li><a class="nav-link {% if request.get_full_path = "/slack/" %} nav-link-active {% endif %} " href="/slack/"> Slack <script async defer src="https://slack.devhunter.co/slackin.js"></script> </a></li>
-</nav>

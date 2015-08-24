@@ -3,19 +3,25 @@
  {% load foro_tags i18n %}
 
 {% block body_app %}
+{% include "devhunt/_nav.html"%}
 <div style="text-align:center;" class="container">
 <br>
 <br>
+<h1 style="margin:0">Mantente en contacto</h1>
+<p style="color:gray">
+    Aprende, contribuye, relacionate
+</p>
     <div  class="row">
+    <ul  class="pager">
+      <li class="next"><a style="float:none;" target="_blank" href="https://devhunterco.slack.com"> Ir a Slack →</a></li>
+  </ul>
 
-    <h1 style="margin:0">Mantente en contacto</h1>
-    <p style="color:gray">
-        Aprende, contribuye, relacionate
-    </p>
+<p>
+        <small>¿ No estas registrado ?</small>
+</p>
 
-        <iframe src="https://slack.devhunter.co/iframe/dialog" width="" height=""></iframe>
+        <iframe src="http://slack.devhunter.co/iframe/dialog" width="" height=""></iframe>
         <p>
-            <a href="https://devhunterco.slack.com"><small>ó Ingresa</small></a>
         </p>
     </div>
 
