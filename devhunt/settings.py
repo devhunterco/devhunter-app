@@ -24,7 +24,7 @@ PROJECT_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-	'django.contrib.admin',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -51,7 +51,7 @@ WSGI_APPLICATION = 'devhunt.wsgi.application'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-DEFAULT_FROM_EMAIL = 'Comunidad devhunter <usuarios@devhunter.co>'
+DEFAULT_FROM_EMAIL = 'Devhunter <contacto@devhunter.co>'
 
 TIME_ZONE = 'America/Bogota'
 
