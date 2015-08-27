@@ -47,7 +47,8 @@ def members(request):
 
 def member_profile(request, username):
     p_user = get_object_or_404(User, username=username)
-    return render(request, 'devhunt/user/profile.html', {'p_user': p_user})
+    comments = Comment.objects.for_user_public(user=p_user)
+    return render(request, 'devhunt/user/profile.html', {'p_user': p_user, 'comments': comments })
 
 
 def sobre(request):
