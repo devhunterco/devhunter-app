@@ -3,6 +3,10 @@
 	padding: 0 0 0 10px;
 }
 
+.top-nav{
+	    border-bottom: 1px solid #eee;
+}
+
 
 #events-menu > .active > a {
 	background-color: white;
