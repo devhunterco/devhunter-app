@@ -5,7 +5,7 @@ from views import event_detail
 
 
 urlpatterns = patterns('evento.views',
-                       url(r'^(?P<id_event>\d+)$',
+                       url(r'^(?P<id_event>\d+)/',
                            event_detail,
                            name='event-detail'),
                        )
