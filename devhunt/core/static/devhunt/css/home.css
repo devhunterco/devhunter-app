@@ -104,11 +104,31 @@
 
 }
 
+.underline{
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	color: #EEEEEE;
+}
+
+.love {
+	color: #E91E63;
+}
+
+.ul-footer li {
+	margin-bottom: 8px;
+
+}
+
+.ul-footer li span {
+	padding-left: 8px;
+}
+
 .footer1 {
     background: #232323;
-    padding: 30px 0 0 0;
-    font-size: 12px;
+    padding: 60px;
+    font-size: 16px;
     color: #999;
+
 }
 
 .footer2 {
