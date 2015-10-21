@@ -16,7 +16,7 @@
                     </span>
                 <strong><a  href="/{{comment.user.username}}/">@{{comment.user.username}}</a></strong>
                     <p>
-                        {{comment.comment}} en <a href="/discusiones/topic/{{comment.topic.id}}/">{{comment.topic}} </a>.
+                        {{comment.comment_html|safe}} en <a href="/discusiones/topic/{{comment.topic.id}}/">{{comment.topic}} </a>.
 
                     </p>
 
